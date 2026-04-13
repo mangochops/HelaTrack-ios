@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		041554A72F8CE36700AD8599 /* HelaTrackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041554A62F8CE36700AD8599 /* HelaTrackApp.swift */; };
+		041554A92F8CE36700AD8599 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041554A82F8CE36700AD8599 /* ContentView.swift */; };
+		041554AB2F8CE36A00AD8599 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 041554AA2F8CE36A00AD8599 /* Assets.xcassets */; };
+		041554AE2F8CE36A00AD8599 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 041554AD2F8CE36A00AD8599 /* Preview Assets.xcassets */; };
+		041554B82F8CE36A00AD8599 /* HelaTrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041554B72F8CE36A00AD8599 /* HelaTrackTests.swift */; };
+		041554C22F8CE36A00AD8599 /* HelaTrackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041554C12F8CE36A00AD8599 /* HelaTrackUITests.swift */; };
+		041554C42F8CE36A00AD8599 /* HelaTrackUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041554C32F8CE36A00AD8599 /* HelaTrackUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		041554B42F8CE36A00AD8599 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0415549B2F8CE36700AD8599 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 041554A22F8CE36700AD8599;
+			remoteInfo = HelaTrack;
+		};
+		041554BE2F8CE36A00AD8599 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0415549B2F8CE36700AD8599 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 041554A22F8CE36700AD8599;
+			remoteInfo = HelaTrack;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		041554A32F8CE36700AD8599 /* HelaTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelaTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		041554A62F8CE36700AD8599 /* HelaTrackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelaTrackApp.swift; sourceTree = "<group>"; };
+		041554A82F8CE36700AD8599 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		041554AA2F8CE36A00AD8599 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		041554AD2F8CE36A00AD8599 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		041554B32F8CE36A00AD8599 /* HelaTrackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelaTrackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		041554B72F8CE36A00AD8599 /* HelaTrackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelaTrackTests.swift; sourceTree = "<group>"; };
+		041554BD2F8CE36A00AD8599 /* HelaTrackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelaTrackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		041554C12F8CE36A00AD8599 /* HelaTrackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelaTrackUITests.swift; sourceTree = "<group>"; };
+		041554C32F8CE36A00AD8599 /* HelaTrackUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelaTrackUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		041554A02F8CE36700AD8599 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		041554B02F8CE36A00AD8599 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		041554BA2F8CE36A00AD8599 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0415549A2F8CE36700AD8599 = {
+			isa = PBXGroup;
+			children = (
+				041554A52F8CE36700AD8599 /* HelaTrack */,
+				041554B62F8CE36A00AD8599 /* HelaTrackTests */,
+				041554C02F8CE36A00AD8599 /* HelaTrackUITests */,
+				041554A42F8CE36700AD8599 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		041554A42F8CE36700AD8599 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				041554A32F8CE36700AD8599 /* HelaTrack.app */,
+				041554B32F8CE36A00AD8599 /* HelaTrackTests.xctest */,
+				041554BD2F8CE36A00AD8599 /* HelaTrackUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		041554A52F8CE36700AD8599 /* HelaTrack */ = {
+			isa = PBXGroup;
+			children = (
+				041554A62F8CE36700AD8599 /* HelaTrackApp.swift */,
+				041554A82F8CE36700AD8599 /* ContentView.swift */,
+				041554AA2F8CE36A00AD8599 /* Assets.xcassets */,
+				041554AC2F8CE36A00AD8599 /* Preview Content */,
+			);
+			path = HelaTrack;
+			sourceTree = "<group>";
+		};
+		041554AC2F8CE36A00AD8599 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				041554AD2F8CE36A00AD8599 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		041554B62F8CE36A00AD8599 /* HelaTrackTests */ = {
+			isa = PBXGroup;
+			children = (
+				041554B72F8CE36A00AD8599 /* HelaTrackTests.swift */,
+			);
+			path = HelaTrackTests;
+			sourceTree = "<group>";
+		};
+		041554C02F8CE36A00AD8599 /* HelaTrackUITests */ = {
+			isa = PBXGroup;
+			children = (
+				041554C12F8CE36A00AD8599 /* HelaTrackUITests.swift */,
+				041554C32F8CE36A00AD8599 /* HelaTrackUITestsLaunchTests.swift */,
+			);
+			path = HelaTrackUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		041554A22F8CE36700AD8599 /* HelaTrack */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 041554C72F8CE36A00AD8599 /* Build configuration list for PBXNativeTarget "HelaTrack" */;
+			buildPhases = (
+				0415549F2F8CE36700AD8599 /* Sources */,
+				041554A02F8CE36700AD8599 /* Frameworks */,
+				041554A12F8CE36700AD8599 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HelaTrack;
+			productName = HelaTrack;
+			productReference = 041554A32F8CE36700AD8599 /* HelaTrack.app */;
+			productType = "com.apple.product-type.application";
+		};
+		041554B22F8CE36A00AD8599 /* HelaTrackTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 041554CA2F8CE36A00AD8599 /* Build configuration list for PBXNativeTarget "HelaTrackTests" */;
+			buildPhases = (
+				041554AF2F8CE36A00AD8599 /* Sources */,
+				041554B02F8CE36A00AD8599 /* Frameworks */,
+				041554B12F8CE36A00AD8599 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				041554B52F8CE36A00AD8599 /* PBXTargetDependency */,
+			);
+			name = HelaTrackTests;
+			productName = HelaTrackTests;
+			productReference = 041554B32F8CE36A00AD8599 /* HelaTrackTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		041554BC2F8CE36A00AD8599 /* HelaTrackUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 041554CD2F8CE36A00AD8599 /* Build configuration list for PBXNativeTarget "HelaTrackUITests" */;
+			buildPhases = (
+				041554B92F8CE36A00AD8599 /* Sources */,
+				041554BA2F8CE36A00AD8599 /* Frameworks */,
+				041554BB2F8CE36A00AD8599 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				041554BF2F8CE36A00AD8599 /* PBXTargetDependency */,
+			);
+			name = HelaTrackUITests;
+			productName = HelaTrackUITests;
+			productReference = 041554BD2F8CE36A00AD8599 /* HelaTrackUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0415549B2F8CE36700AD8599 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					041554A22F8CE36700AD8599 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					041554B22F8CE36A00AD8599 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 041554A22F8CE36700AD8599;
+					};
+					041554BC2F8CE36A00AD8599 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 041554A22F8CE36700AD8599;
+					};
+				};
+			};
+			buildConfigurationList = 0415549E2F8CE36700AD8599 /* Build configuration list for PBXProject "HelaTrack" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0415549A2F8CE36700AD8599;
+			productRefGroup = 041554A42F8CE36700AD8599 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				041554A22F8CE36700AD8599 /* HelaTrack */,
+				041554B22F8CE36A00AD8599 /* HelaTrackTests */,
+				041554BC2F8CE36A00AD8599 /* HelaTrackUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		041554A12F8CE36700AD8599 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				041554AE2F8CE36A00AD8599 /* Preview Assets.xcassets in Resources */,
+				041554AB2F8CE36A00AD8599 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		041554B12F8CE36A00AD8599 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		041554BB2F8CE36A00AD8599 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0415549F2F8CE36700AD8599 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				041554A92F8CE36700AD8599 /* ContentView.swift in Sources */,
+				041554A72F8CE36700AD8599 /* HelaTrackApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		041554AF2F8CE36A00AD8599 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				041554B82F8CE36A00AD8599 /* HelaTrackTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		041554B92F8CE36A00AD8599 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				041554C42F8CE36A00AD8599 /* HelaTrackUITestsLaunchTests.swift in Sources */,
+				041554C22F8CE36A00AD8599 /* HelaTrackUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		041554B52F8CE36A00AD8599 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 041554A22F8CE36700AD8599 /* HelaTrack */;
+			targetProxy = 041554B42F8CE36A00AD8599 /* PBXContainerItemProxy */;
+		};
+		041554BF2F8CE36A00AD8599 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 041554A22F8CE36700AD8599 /* HelaTrack */;
+			targetProxy = 041554BE2F8CE36A00AD8599 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		041554C52F8CE36A00AD8599 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		041554C62F8CE36A00AD8599 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		041554C82F8CE36A00AD8599 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HelaTrack/Preview Content\"";
+				DEVELOPMENT_TEAM = FMB873S974;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.ke.mangochopsstudio.HelaTrack;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		041554C92F8CE36A00AD8599 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HelaTrack/Preview Content\"";
+				DEVELOPMENT_TEAM = FMB873S974;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.ke.mangochopsstudio.HelaTrack;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		041554CB2F8CE36A00AD8599 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FMB873S974;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.ke.mangochopsstudio.HelaTrackTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HelaTrack.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HelaTrack";
+			};
+			name = Debug;
+		};
+		041554CC2F8CE36A00AD8599 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FMB873S974;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.ke.mangochopsstudio.HelaTrackTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HelaTrack.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HelaTrack";
+			};
+			name = Release;
+		};
+		041554CE2F8CE36A00AD8599 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FMB873S974;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.ke.mangochopsstudio.HelaTrackUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HelaTrack;
+			};
+			name = Debug;
+		};
+		041554CF2F8CE36A00AD8599 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FMB873S974;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.ke.mangochopsstudio.HelaTrackUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HelaTrack;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0415549E2F8CE36700AD8599 /* Build configuration list for PBXProject "HelaTrack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				041554C52F8CE36A00AD8599 /* Debug */,
+				041554C62F8CE36A00AD8599 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		041554C72F8CE36A00AD8599 /* Build configuration list for PBXNativeTarget "HelaTrack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				041554C82F8CE36A00AD8599 /* Debug */,
+				041554C92F8CE36A00AD8599 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		041554CA2F8CE36A00AD8599 /* Build configuration list for PBXNativeTarget "HelaTrackTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				041554CB2F8CE36A00AD8599 /* Debug */,
+				041554CC2F8CE36A00AD8599 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		041554CD2F8CE36A00AD8599 /* Build configuration list for PBXNativeTarget "HelaTrackUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				041554CE2F8CE36A00AD8599 /* Debug */,
+				041554CF2F8CE36A00AD8599 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0415549B2F8CE36700AD8599 /* Project object */;
+}
