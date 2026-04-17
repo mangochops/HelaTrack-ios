@@ -18,6 +18,37 @@
 		049CA15E2F90F54000B48F29 /* analytics.json in Resources */ = {isa = PBXBuildFile; fileRef = 049CA15A2F90F54000B48F29 /* analytics.json */; };
 		049CA15F2F90F54000B48F29 /* finance.json in Resources */ = {isa = PBXBuildFile; fileRef = 049CA15B2F90F54000B48F29 /* finance.json */; };
 		049CA1602F90F54000B48F29 /* moneytransfer.json in Resources */ = {isa = PBXBuildFile; fileRef = 049CA15C2F90F54000B48F29 /* moneytransfer.json */; };
+		049CA1622F90FA1E00B48F29 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CA1612F90FA1E00B48F29 /* OnboardingView.swift */; };
+		049CA1642F90FA4500B48F29 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CA1632F90FA4500B48F29 /* OnboardingViewModel.swift */; };
+		049CA1682F910E5700B48F29 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 049CA1672F910E5700B48F29 /* Lottie */; };
+		049CA16A2F9116D600B48F29 /* PaymentProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CA1692F9116D600B48F29 /* PaymentProviders.swift */; };
+		049CA16D2F9120D300B48F29 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CA16C2F9120D200B48F29 /* Colors.swift */; };
+		049CA16F2F9123E600B48F29 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CA16E2F9123E600B48F29 /* LottieView.swift */; };
+		049CA1712F91242E00B48F29 /* ZApplyIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CA1702F91242E00B48F29 /* ZApplyIcon.swift */; };
+		049CA1732F9124C900B48F29 /* AnimationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CA1722F9124C900B48F29 /* AnimationPage.swift */; };
+		049CA1752F91252F00B48F29 /* PaymentSelectionPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CA1742F91252F00B48F29 /* PaymentSelectionPage.swift */; };
+		049CA1772F9125C000B48F29 /* CredentialsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CA1762F9125C000B48F29 /* CredentialsPage.swift */; };
+		049CA1792F912E7900B48F29 /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CA1782F912E7900B48F29 /* Icons.swift */; };
+		049CA17B2F913F7000B48F29 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CA17A2F913F7000B48F29 /* MainTabView.swift */; };
+		049CA17D2F913FCD00B48F29 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CA17C2F913FCD00B48F29 /* HomeView.swift */; };
+		049CA1812F91402700B48F29 /* InsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CA1802F91402700B48F29 /* InsightsView.swift */; };
+		049CA1832F91403C00B48F29 /* TransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CA1822F91403C00B48F29 /* TransactionsView.swift */; };
+		049CA1852F91405300B48F29 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CA1842F91405300B48F29 /* ProfileView.swift */; };
+		049CA1872F9143CE00B48F29 /* OverviewTabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CA1862F9143CE00B48F29 /* OverviewTabs.swift */; };
+		049CA1892F91443D00B48F29 /* DailyPulseCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CA1882F91443D00B48F29 /* DailyPulseCard.swift */; };
+		049CA18B2F9144FF00B48F29 /* TransactioRowPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CA18A2F9144FF00B48F29 /* TransactioRowPlaceholder.swift */; };
+		04B9511B2F92A1FD00A600B5 /* TransactionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B9511A2F92A1FD00A600B5 /* TransactionEntity.swift */; };
+		04B9511D2F92A24400A600B5 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B9511C2F92A24400A600B5 /* PersistenceController.swift */; };
+		04B9511F2F92A30200A600B5 /* TransactionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B9511E2F92A30200A600B5 /* TransactionRepository.swift */; };
+		04B951212F92A3C000A600B5 /* MessageParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B951202F92A3C000A600B5 /* MessageParser.swift */; };
+		04B951232F92A44500A600B5 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B951222F92A44500A600B5 /* Notifications.swift */; };
+		04BADDE02F914C0300111C21 /* IncomeBarGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BADDDF2F914C0300111C21 /* IncomeBarGraph.swift */; };
+		04BADDE22F914E9800111C21 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BADDE12F914E9800111C21 /* TransactionModel.swift */; };
+		04BADDE42F914EED00111C21 /* TransactionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BADDE32F914EED00111C21 /* TransactionCard.swift */; };
+		04BADDE62F91551C00111C21 /* FilterChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BADDE52F91551C00111C21 /* FilterChip.swift */; };
+		04BADDE82F9160D500111C21 /* InsightsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BADDE72F9160D500111C21 /* InsightsModel.swift */; };
+		04BADDEA2F91610600111C21 /* InsightCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BADDE92F91610600111C21 /* InsightCard.swift */; };
+		04BADDEC2F91638400111C21 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BADDEB2F91638400111C21 /* EditProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +83,36 @@
 		049CA15A2F90F54000B48F29 /* analytics.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = analytics.json; path = ../../../../../GoWallet/app/src/main/res/raw/analytics.json; sourceTree = "<group>"; };
 		049CA15B2F90F54000B48F29 /* finance.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = finance.json; path = ../../../../../GoWallet/app/src/main/res/raw/finance.json; sourceTree = "<group>"; };
 		049CA15C2F90F54000B48F29 /* moneytransfer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = moneytransfer.json; path = ../../../../../GoWallet/app/src/main/res/raw/moneytransfer.json; sourceTree = "<group>"; };
+		049CA1612F90FA1E00B48F29 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		049CA1632F90FA4500B48F29 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		049CA1692F9116D600B48F29 /* PaymentProviders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentProviders.swift; sourceTree = "<group>"; };
+		049CA16C2F9120D200B48F29 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		049CA16E2F9123E600B48F29 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		049CA1702F91242E00B48F29 /* ZApplyIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZApplyIcon.swift; sourceTree = "<group>"; };
+		049CA1722F9124C900B48F29 /* AnimationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationPage.swift; sourceTree = "<group>"; };
+		049CA1742F91252F00B48F29 /* PaymentSelectionPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSelectionPage.swift; sourceTree = "<group>"; };
+		049CA1762F9125C000B48F29 /* CredentialsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsPage.swift; sourceTree = "<group>"; };
+		049CA1782F912E7900B48F29 /* Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
+		049CA17A2F913F7000B48F29 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		049CA17C2F913FCD00B48F29 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		049CA1802F91402700B48F29 /* InsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsView.swift; sourceTree = "<group>"; };
+		049CA1822F91403C00B48F29 /* TransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsView.swift; sourceTree = "<group>"; };
+		049CA1842F91405300B48F29 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		049CA1862F9143CE00B48F29 /* OverviewTabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewTabs.swift; sourceTree = "<group>"; };
+		049CA1882F91443D00B48F29 /* DailyPulseCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPulseCard.swift; sourceTree = "<group>"; };
+		049CA18A2F9144FF00B48F29 /* TransactioRowPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactioRowPlaceholder.swift; sourceTree = "<group>"; };
+		04B9511A2F92A1FD00A600B5 /* TransactionEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionEntity.swift; sourceTree = "<group>"; };
+		04B9511C2F92A24400A600B5 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		04B9511E2F92A30200A600B5 /* TransactionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRepository.swift; sourceTree = "<group>"; };
+		04B951202F92A3C000A600B5 /* MessageParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageParser.swift; sourceTree = "<group>"; };
+		04B951222F92A44500A600B5 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		04BADDDF2F914C0300111C21 /* IncomeBarGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeBarGraph.swift; sourceTree = "<group>"; };
+		04BADDE12F914E9800111C21 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
+		04BADDE32F914EED00111C21 /* TransactionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCard.swift; sourceTree = "<group>"; };
+		04BADDE52F91551C00111C21 /* FilterChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterChip.swift; sourceTree = "<group>"; };
+		04BADDE72F9160D500111C21 /* InsightsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsModel.swift; sourceTree = "<group>"; };
+		04BADDE92F91610600111C21 /* InsightCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightCard.swift; sourceTree = "<group>"; };
+		04BADDEB2F91638400111C21 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				049CA1682F910E5700B48F29 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,9 +207,19 @@
 			path = res;
 			sourceTree = "<group>";
 		};
+		049CA16B2F9120A000B48F29 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				049CA16C2F9120D200B48F29 /* Colors.swift */,
+				049CA1782F912E7900B48F29 /* Icons.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		04F35A032F8F975900984314 /* main */ = {
 			isa = PBXGroup;
 			children = (
+				049CA16B2F9120A000B48F29 /* Helpers */,
 				049CA1582F90F4F900B48F29 /* res */,
 				04F35A132F8F9A0E00984314 /* Services */,
 				04F35A122F8F98E300984314 /* Worker */,
@@ -162,7 +234,9 @@
 		04F35A042F8F976C00984314 /* app */ = {
 			isa = PBXGroup;
 			children = (
+				041554A82F8CE36700AD8599 /* ContentView.swift */,
 				041554A62F8CE36700AD8599 /* HelaTrackApp.swift */,
+				049CA17A2F913F7000B48F29 /* MainTabView.swift */,
 			);
 			path = app;
 			sourceTree = "<group>";
@@ -181,7 +255,7 @@
 		04F35A062F8F97BA00984314 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				041554A82F8CE36700AD8599 /* ContentView.swift */,
+				049CA17C2F913FCD00B48F29 /* HomeView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -189,6 +263,7 @@
 		04F35A072F8F97F600984314 /* Insights */ = {
 			isa = PBXGroup;
 			children = (
+				049CA1802F91402700B48F29 /* InsightsView.swift */,
 			);
 			path = Insights;
 			sourceTree = "<group>";
@@ -196,6 +271,7 @@
 		04F35A082F8F980700984314 /* Transactions */ = {
 			isa = PBXGroup;
 			children = (
+				049CA1822F91403C00B48F29 /* TransactionsView.swift */,
 			);
 			path = Transactions;
 			sourceTree = "<group>";
@@ -203,6 +279,8 @@
 		04F35A092F8F982400984314 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				049CA1842F91405300B48F29 /* ProfileView.swift */,
+				04BADDEB2F91638400111C21 /* EditProfileView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -219,6 +297,15 @@
 		04F35A0B2F8F984F00984314 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				049CA16E2F9123E600B48F29 /* LottieView.swift */,
+				049CA1702F91242E00B48F29 /* ZApplyIcon.swift */,
+				049CA1862F9143CE00B48F29 /* OverviewTabs.swift */,
+				049CA1882F91443D00B48F29 /* DailyPulseCard.swift */,
+				049CA18A2F9144FF00B48F29 /* TransactioRowPlaceholder.swift */,
+				04BADDDF2F914C0300111C21 /* IncomeBarGraph.swift */,
+				04BADDE32F914EED00111C21 /* TransactionCard.swift */,
+				04BADDE52F91551C00111C21 /* FilterChip.swift */,
+				04BADDE92F91610600111C21 /* InsightCard.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -226,6 +313,11 @@
 		04F35A0C2F8F985D00984314 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				049CA1612F90FA1E00B48F29 /* OnboardingView.swift */,
+				049CA1632F90FA4500B48F29 /* OnboardingViewModel.swift */,
+				049CA1722F9124C900B48F29 /* AnimationPage.swift */,
+				049CA1742F91252F00B48F29 /* PaymentSelectionPage.swift */,
+				049CA1762F9125C000B48F29 /* CredentialsPage.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -233,6 +325,8 @@
 		04F35A0E2F8F989200984314 /* Local */ = {
 			isa = PBXGroup;
 			children = (
+				04B9511A2F92A1FD00A600B5 /* TransactionEntity.swift */,
+				04B9511C2F92A24400A600B5 /* PersistenceController.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -240,6 +334,7 @@
 		04F35A0F2F8F98A000984314 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				04B9511E2F92A30200A600B5 /* TransactionRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -247,6 +342,8 @@
 		04F35A102F8F98B100984314 /* Sms */ = {
 			isa = PBXGroup;
 			children = (
+				04B951202F92A3C000A600B5 /* MessageParser.swift */,
+				04B951222F92A44500A600B5 /* Notifications.swift */,
 			);
 			path = Sms;
 			sourceTree = "<group>";
@@ -254,6 +351,9 @@
 		04F35A112F8F98C300984314 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				049CA1692F9116D600B48F29 /* PaymentProviders.swift */,
+				04BADDE12F914E9800111C21 /* TransactionModel.swift */,
+				04BADDE72F9160D500111C21 /* InsightsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -291,6 +391,9 @@
 			dependencies = (
 			);
 			name = HelaTrack;
+			packageProductDependencies = (
+				049CA1672F910E5700B48F29 /* Lottie */,
+			);
 			productName = HelaTrack;
 			productReference = 041554A32F8CE36700AD8599 /* HelaTrack.app */;
 			productType = "com.apple.product-type.application";
@@ -363,6 +466,9 @@
 				Base,
 			);
 			mainGroup = 0415549A2F8CE36700AD8599;
+			packageReferences = (
+				049CA1662F910E5700B48F29 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 041554A42F8CE36700AD8599 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -409,8 +515,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				049CA18B2F9144FF00B48F29 /* TransactioRowPlaceholder.swift in Sources */,
+				049CA1772F9125C000B48F29 /* CredentialsPage.swift in Sources */,
+				049CA17D2F913FCD00B48F29 /* HomeView.swift in Sources */,
+				049CA1622F90FA1E00B48F29 /* OnboardingView.swift in Sources */,
+				04B951212F92A3C000A600B5 /* MessageParser.swift in Sources */,
+				049CA1792F912E7900B48F29 /* Icons.swift in Sources */,
+				049CA1732F9124C900B48F29 /* AnimationPage.swift in Sources */,
+				04B9511D2F92A24400A600B5 /* PersistenceController.swift in Sources */,
+				04B951232F92A44500A600B5 /* Notifications.swift in Sources */,
+				049CA1832F91403C00B48F29 /* TransactionsView.swift in Sources */,
+				049CA16D2F9120D300B48F29 /* Colors.swift in Sources */,
+				049CA1812F91402700B48F29 /* InsightsView.swift in Sources */,
+				04BADDEC2F91638400111C21 /* EditProfileView.swift in Sources */,
+				049CA1892F91443D00B48F29 /* DailyPulseCard.swift in Sources */,
+				049CA16A2F9116D600B48F29 /* PaymentProviders.swift in Sources */,
+				049CA1852F91405300B48F29 /* ProfileView.swift in Sources */,
+				04B9511F2F92A30200A600B5 /* TransactionRepository.swift in Sources */,
+				04BADDE82F9160D500111C21 /* InsightsModel.swift in Sources */,
+				04BADDE22F914E9800111C21 /* TransactionModel.swift in Sources */,
+				04BADDE62F91551C00111C21 /* FilterChip.swift in Sources */,
+				049CA1872F9143CE00B48F29 /* OverviewTabs.swift in Sources */,
 				041554A92F8CE36700AD8599 /* ContentView.swift in Sources */,
+				04BADDE42F914EED00111C21 /* TransactionCard.swift in Sources */,
+				049CA17B2F913F7000B48F29 /* MainTabView.swift in Sources */,
+				049CA1712F91242E00B48F29 /* ZApplyIcon.swift in Sources */,
+				04BADDE02F914C0300111C21 /* IncomeBarGraph.swift in Sources */,
+				049CA1752F91252F00B48F29 /* PaymentSelectionPage.swift in Sources */,
+				04BADDEA2F91610600111C21 /* InsightCard.swift in Sources */,
+				049CA16F2F9123E600B48F29 /* LottieView.swift in Sources */,
+				04B9511B2F92A1FD00A600B5 /* TransactionEntity.swift in Sources */,
 				041554A72F8CE36700AD8599 /* HelaTrackApp.swift in Sources */,
+				049CA1642F90FA4500B48F29 /* OnboardingViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -740,6 +876,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		049CA1662F910E5700B48F29 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = exactVersion;
+				version = 4.4.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		049CA1672F910E5700B48F29 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 049CA1662F910E5700B48F29 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0415549B2F8CE36700AD8599 /* Project object */;
 }

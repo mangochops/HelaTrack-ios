@@ -8,17 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!Its Mbugua here")
-        }
-        .padding()
-    }
-}
+    // This automatically checks UserDefaults for the key
+    @AppStorage("hasSeenOnboarding") var hasSeenOnboarding: Bool = false
 
-#Preview {
-    ContentView()
+    var body: some View {
+        if hasSeenOnboarding {
+            MainTabView() // Your features live here
+        } else {
+            OnboardingView() // Your entry point for new users
+        }
+    }
 }

@@ -8,11 +8,23 @@
 import SwiftUI
 
 struct FilterChip: View {
+    let label: String
+    let isSelected: Bool
+    let action: () -> Void
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button(action: action) {
+            Text(label)
+                .font(.caption)
+                .padding(.horizontal, 16)
+                .padding(.vertical, 8)
+                .background(isSelected ? Color.accentColor.opacity(0.2) : Color.white)
+                .foregroundColor(isSelected ? .primaryBrand : .primary)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 20)
+                        .stroke(isSelected ? Color.accentColor : Color.secondary.opacity(0.3), lineWidth: 1)
+                )
+                .clipShape(Capsule())
+        }
     }
-}
-
-#Preview {
-    FilterChip()
 }

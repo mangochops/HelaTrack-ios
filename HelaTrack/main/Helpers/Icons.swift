@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct Icons: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-#Preview {
-    Icons()
+extension Image {
+    static let mpesaLogo = Image("MPESALogo")
+    static let mpesaMerchantLogo = Image("MPESAMerchantLogo")
+    static let airtelLogo = Image("AirtelLogo")
+    static let equityLogo = Image("EquityLogo")
+    static let familyBankLogo = Image("FamilyLogo")
+    static let ncbaLogo = Image("NCBALogo")
+    static let absaLogo = Image("ABSALogo")
 }

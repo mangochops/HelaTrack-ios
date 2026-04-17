@@ -7,12 +7,19 @@
 
 import SwiftUI
 
-struct TransactionModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+struct TransactionModel: Identifiable {
+    let id = UUID()
+        let senderName: String
+        let referenceCode: String // e.g., SJK71234XX
+        let amount: Double
+        let date: String // e.g., "15 Apr | 15:21"
+        let logo: Image
+        let color: Color
 }
 
-#Preview {
-    TransactionModel()
+enum TimeFilter: String, CaseIterable {
+    case all = "All"
+    case today = "Today"
+    case week = "This Week"
+    case month = "This Month"
 }
