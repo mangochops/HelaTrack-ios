@@ -38,4 +38,20 @@ struct PersistenceController {
             print("Failed to save transaction: \(error)")
         }
     }
+    
+    // In PersistenceController.swift
+    func seedTestData() {
+        let mockSMS = [
+            "SJK71234XX Confirmed. Ksh 1,300.00 received from Villa Rosa on 15/4/26",
+            "RK923456YY Confirmed. Ksh 2,500.00 received from NJERI on 15/4/26",
+            "ID: T23456789 Confirmed. Amount: KES 4,200.00 from KCB BANK on 16/4/26"
+        ]
+        
+        for body in mockSMS {
+            // Use your existing parser logic
+            if let entity = MessageParser.parse(sender: "MPESA", body: body) {
+                saveTransaction(entity) // Your method to save to Core Data
+            }
+        }
+    }
 }

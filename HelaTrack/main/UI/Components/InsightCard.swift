@@ -44,7 +44,8 @@ struct InsightCard: View {
                             // Digital Segment
                             Rectangle()
                                 .fill(Color(red: 0.05, green: 0.1, blue: 0.2))
-                                .frame(width: geo.size.width * CGFloat(digitalAmount / totalAmount))
+                            // Change this line inside your GeometryReader
+                            .frame(width: totalAmount > 0 ? geo.size.width * CGFloat(digitalAmount / totalAmount) : 0)
                             // Cash Segment
                             Rectangle()
                                 .fill(Color.secondary.opacity(0.2))

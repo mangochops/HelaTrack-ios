@@ -8,16 +8,32 @@
 import SwiftUI
 
 struct HomeView: View {
-    // These will eventually come from your UserViewModel
-    @State private var todayIncome: Double = 1000
-    @State private var totalBalance: Double = 45000
+    
     @State private var showCashDialog = false
     
-    // Example Mock Data
-    let recentTransactions = [
-        TransactionModel(senderName: "WANGUI on", referenceCode: "SJK71234XX", amount: 1000, date: "15 Apr | 15:21", logo: .mpesaLogo, color: .brandsafaricom),
-        TransactionModel(senderName: "NJERI on", referenceCode: "RK923456YY", amount: 2500, date: "15 Apr | 14:05", logo: .airtelLogo, color: .brandairtel)
-    ]
+    @FetchRequest(
+            entity: Transaction.entity(),
+            sortDescriptors: [NSSortDescriptor(keyPath: \Transaction.timestamp, ascending: false)],
+            predicate: nil,
+            animation: .default
+        )
+    private var allTransactions: FetchedResults<Transaction>
+
+        // 1. Calculate Total Balance (Sum of all transaction amounts)
+        var totalBalance: Double {
+            allTransactions.reduce(0) { $0 + $1.amount }
+        }
+
+        // 2. Calculate Today's Income (Sum of amounts where date is today)
+        var todayIncome: Double {
+            let calendar = Calendar.current
+            return allTransactions
+                .filter { transaction in
+                    guard let date = transaction.timestamp else { return false }
+                    return calendar.isDateInToday(date)
+                }
+                .reduce(0) { $0 + $1.amount }
+        }
     
     var body: some View {
         NavigationView {
@@ -35,7 +51,7 @@ struct HomeView: View {
                     VStack(alignment: .leading) {
                         
                         IncomeBarGraph(
-                            data: [200, 400, 600, 800, 1200, 1500, 2000],
+                            data: [200, 400, 600, 800, 1200, 1500, todayIncome],
                             days: ["T", "F", "S", "S", "M", "T", "W"]
                         )
                     }
@@ -53,7 +69,7 @@ struct HomeView: View {
                     
                     // Transaction Cards
                     // Replace with a ForEach when we have the Transaction model
-                    ForEach(recentTransactions) { tx in
+                    ForEach(Array(allTransactions.prefix(5)),id: \.self) { tx in
                             TransactionRow(transaction: tx)
                         }
                     }

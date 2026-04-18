@@ -11,10 +11,10 @@ struct TransactionsView: View {
     @State private var searchQuery = ""
     @State private var selectedFilter: TimeFilter = .all
     
-    // Mock data for UI development
-    let recenttransactions = [
-        TransactionModel(senderName: "Villa Rosa on", referenceCode: "SJK71234XX", amount: 1300, date: "15 Apr | 18:08", logo: .mpesaLogo, color: .brandsafaricom)
-    ]
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Transaction.timestamp, ascending: false)],
+        animation: .default)
+    private var transactions: FetchedResults<Transaction>
     
     var body: some View {
         NavigationStack {
@@ -51,7 +51,7 @@ struct TransactionsView: View {
                     // --- TRANSACTION LIST ---
                     ScrollView {
                         LazyVStack(spacing: 8) {
-                            ForEach(recenttransactions) { transaction in
+                            ForEach(filteredTransactions,id: \.self) { transaction in
                                 TransactionRow(transaction: transaction)
                             }
                         }
@@ -75,5 +75,16 @@ struct TransactionsView: View {
             .navigationBarTitleDisplayMode(.inline)
             .background(Color.secondary.opacity(0.05).ignoresSafeArea())
         }
+        
     }
+    private var filteredTransactions: [Transaction] {
+            if searchQuery.isEmpty {
+                return Array(transactions)
+            } else {
+                return transactions.filter {
+                    ($0.person ?? "").localizedCaseInsensitiveContains(searchQuery) ||
+                    ($0.ref ?? "").localizedCaseInsensitiveContains(searchQuery)
+                }
+            }
+        }
 }

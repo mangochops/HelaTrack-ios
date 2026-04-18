@@ -11,7 +11,7 @@
 		041554A92F8CE36700AD8599 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041554A82F8CE36700AD8599 /* ContentView.swift */; };
 		041554AB2F8CE36A00AD8599 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 041554AA2F8CE36A00AD8599 /* Assets.xcassets */; };
 		041554AE2F8CE36A00AD8599 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 041554AD2F8CE36A00AD8599 /* Preview Assets.xcassets */; };
-		041554B82F8CE36A00AD8599 /* HelaTrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041554B72F8CE36A00AD8599 /* HelaTrackTests.swift */; };
+		041554B82F8CE36A00AD8599 /* messageParseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041554B72F8CE36A00AD8599 /* messageParseTest.swift */; };
 		041554C22F8CE36A00AD8599 /* HelaTrackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041554C12F8CE36A00AD8599 /* HelaTrackUITests.swift */; };
 		041554C42F8CE36A00AD8599 /* HelaTrackUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041554C32F8CE36A00AD8599 /* HelaTrackUITestsLaunchTests.swift */; };
 		049CA15D2F90F54000B48F29 /* assistant.json in Resources */ = {isa = PBXBuildFile; fileRef = 049CA1592F90F54000B48F29 /* assistant.json */; };
@@ -42,6 +42,9 @@
 		04B9511F2F92A30200A600B5 /* TransactionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B9511E2F92A30200A600B5 /* TransactionRepository.swift */; };
 		04B951212F92A3C000A600B5 /* MessageParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B951202F92A3C000A600B5 /* MessageParser.swift */; };
 		04B951232F92A44500A600B5 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B951222F92A44500A600B5 /* Notifications.swift */; };
+		04B9512B2F938B6600A600B5 /* MessageFilterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B9512A2F938B6600A600B5 /* MessageFilterExtension.swift */; };
+		04B9512F2F938B6700A600B5 /* HelaTrackFilter.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 04B951282F938B6600A600B5 /* HelaTrackFilter.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		04B951362F938F2F00A600B5 /* HelaTrack.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04B951342F938F2F00A600B5 /* HelaTrack.xcdatamodeld */; };
 		04BADDE02F914C0300111C21 /* IncomeBarGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BADDDF2F914C0300111C21 /* IncomeBarGraph.swift */; };
 		04BADDE22F914E9800111C21 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BADDE12F914E9800111C21 /* TransactionModel.swift */; };
 		04BADDE42F914EED00111C21 /* TransactionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BADDE32F914EED00111C21 /* TransactionCard.swift */; };
@@ -66,7 +69,28 @@
 			remoteGlobalIDString = 041554A22F8CE36700AD8599;
 			remoteInfo = HelaTrack;
 		};
+		04B9512D2F938B6700A600B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0415549B2F8CE36700AD8599 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04B951272F938B6600A600B5;
+			remoteInfo = HelaTrackFilter;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		04B951332F938B6700A600B5 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				04B9512F2F938B6700A600B5 /* HelaTrackFilter.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		041554A32F8CE36700AD8599 /* HelaTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelaTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,7 +99,7 @@
 		041554AA2F8CE36A00AD8599 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		041554AD2F8CE36A00AD8599 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		041554B32F8CE36A00AD8599 /* HelaTrackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelaTrackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		041554B72F8CE36A00AD8599 /* HelaTrackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelaTrackTests.swift; sourceTree = "<group>"; };
+		041554B72F8CE36A00AD8599 /* messageParseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messageParseTest.swift; sourceTree = "<group>"; };
 		041554BD2F8CE36A00AD8599 /* HelaTrackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelaTrackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		041554C12F8CE36A00AD8599 /* HelaTrackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelaTrackUITests.swift; sourceTree = "<group>"; };
 		041554C32F8CE36A00AD8599 /* HelaTrackUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelaTrackUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -106,6 +130,10 @@
 		04B9511E2F92A30200A600B5 /* TransactionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRepository.swift; sourceTree = "<group>"; };
 		04B951202F92A3C000A600B5 /* MessageParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageParser.swift; sourceTree = "<group>"; };
 		04B951222F92A44500A600B5 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		04B951282F938B6600A600B5 /* HelaTrackFilter.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = HelaTrackFilter.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		04B9512A2F938B6600A600B5 /* MessageFilterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFilterExtension.swift; sourceTree = "<group>"; };
+		04B9512C2F938B6700A600B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04B951352F938F2F00A600B5 /* HelaTrack.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HelaTrack.xcdatamodel; sourceTree = "<group>"; };
 		04BADDDF2F914C0300111C21 /* IncomeBarGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeBarGraph.swift; sourceTree = "<group>"; };
 		04BADDE12F914E9800111C21 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
 		04BADDE32F914EED00111C21 /* TransactionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCard.swift; sourceTree = "<group>"; };
@@ -138,6 +166,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		04B951252F938B6600A600B5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -147,6 +182,7 @@
 				041554A52F8CE36700AD8599 /* HelaTrack */,
 				041554B62F8CE36A00AD8599 /* HelaTrackTests */,
 				041554C02F8CE36A00AD8599 /* HelaTrackUITests */,
+				04B951292F938B6600A600B5 /* HelaTrackFilter */,
 				041554A42F8CE36700AD8599 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -157,6 +193,7 @@
 				041554A32F8CE36700AD8599 /* HelaTrack.app */,
 				041554B32F8CE36A00AD8599 /* HelaTrackTests.xctest */,
 				041554BD2F8CE36A00AD8599 /* HelaTrackUITests.xctest */,
+				04B951282F938B6600A600B5 /* HelaTrackFilter.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -182,7 +219,7 @@
 		041554B62F8CE36A00AD8599 /* HelaTrackTests */ = {
 			isa = PBXGroup;
 			children = (
-				041554B72F8CE36A00AD8599 /* HelaTrackTests.swift */,
+				041554B72F8CE36A00AD8599 /* messageParseTest.swift */,
 			);
 			path = HelaTrackTests;
 			sourceTree = "<group>";
@@ -214,6 +251,15 @@
 				049CA1782F912E7900B48F29 /* Icons.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		04B951292F938B6600A600B5 /* HelaTrackFilter */ = {
+			isa = PBXGroup;
+			children = (
+				04B9512A2F938B6600A600B5 /* MessageFilterExtension.swift */,
+				04B9512C2F938B6700A600B5 /* Info.plist */,
+			);
+			path = HelaTrackFilter;
 			sourceTree = "<group>";
 		};
 		04F35A032F8F975900984314 /* main */ = {
@@ -327,6 +373,7 @@
 			children = (
 				04B9511A2F92A1FD00A600B5 /* TransactionEntity.swift */,
 				04B9511C2F92A24400A600B5 /* PersistenceController.swift */,
+				04B951342F938F2F00A600B5 /* HelaTrack.xcdatamodeld */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -385,10 +432,12 @@
 				0415549F2F8CE36700AD8599 /* Sources */,
 				041554A02F8CE36700AD8599 /* Frameworks */,
 				041554A12F8CE36700AD8599 /* Resources */,
+				04B951332F938B6700A600B5 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				04B9512E2F938B6700A600B5 /* PBXTargetDependency */,
 			);
 			name = HelaTrack;
 			packageProductDependencies = (
@@ -434,6 +483,23 @@
 			productReference = 041554BD2F8CE36A00AD8599 /* HelaTrackUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		04B951272F938B6600A600B5 /* HelaTrackFilter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04B951302F938B6700A600B5 /* Build configuration list for PBXNativeTarget "HelaTrackFilter" */;
+			buildPhases = (
+				04B951242F938B6600A600B5 /* Sources */,
+				04B951252F938B6600A600B5 /* Frameworks */,
+				04B951262F938B6600A600B5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HelaTrackFilter;
+			productName = HelaTrackFilter;
+			productReference = 04B951282F938B6600A600B5 /* HelaTrackFilter.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -454,6 +520,9 @@
 					041554BC2F8CE36A00AD8599 = {
 						CreatedOnToolsVersion = 15.2;
 						TestTargetID = 041554A22F8CE36700AD8599;
+					};
+					04B951272F938B6600A600B5 = {
+						CreatedOnToolsVersion = 15.2;
 					};
 				};
 			};
@@ -476,6 +545,7 @@
 				041554A22F8CE36700AD8599 /* HelaTrack */,
 				041554B22F8CE36A00AD8599 /* HelaTrackTests */,
 				041554BC2F8CE36A00AD8599 /* HelaTrackUITests */,
+				04B951272F938B6600A600B5 /* HelaTrackFilter */,
 			);
 		};
 /* End PBXProject section */
@@ -508,6 +578,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		04B951262F938B6600A600B5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -515,6 +592,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B951362F938F2F00A600B5 /* HelaTrack.xcdatamodeld in Sources */,
 				049CA18B2F9144FF00B48F29 /* TransactioRowPlaceholder.swift in Sources */,
 				049CA1772F9125C000B48F29 /* CredentialsPage.swift in Sources */,
 				049CA17D2F913FCD00B48F29 /* HomeView.swift in Sources */,
@@ -554,7 +632,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				041554B82F8CE36A00AD8599 /* HelaTrackTests.swift in Sources */,
+				041554B82F8CE36A00AD8599 /* messageParseTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,6 +642,14 @@
 			files = (
 				041554C42F8CE36A00AD8599 /* HelaTrackUITestsLaunchTests.swift in Sources */,
 				041554C22F8CE36A00AD8599 /* HelaTrackUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04B951242F938B6600A600B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04B9512B2F938B6600A600B5 /* MessageFilterExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,6 +665,11 @@
 			isa = PBXTargetDependency;
 			target = 041554A22F8CE36700AD8599 /* HelaTrack */;
 			targetProxy = 041554BE2F8CE36A00AD8599 /* PBXContainerItemProxy */;
+		};
+		04B9512E2F938B6700A600B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04B951272F938B6600A600B5 /* HelaTrackFilter */;
+			targetProxy = 04B9512D2F938B6700A600B5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -705,6 +796,7 @@
 		041554C82F8CE36A00AD8599 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -734,6 +826,7 @@
 		041554C92F8CE36A00AD8599 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -836,6 +929,56 @@
 			};
 			name = Release;
 		};
+		04B951312F938B6700A600B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FMB873S974;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HelaTrackFilter/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = HelaTrackFilter;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.ke.mangochopsstudio.HelaTrack.HelaTrackFilter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		04B951322F938B6700A600B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FMB873S974;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HelaTrackFilter/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = HelaTrackFilter;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.ke.mangochopsstudio.HelaTrack.HelaTrackFilter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -875,6 +1018,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		04B951302F938B6700A600B5 /* Build configuration list for PBXNativeTarget "HelaTrackFilter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04B951312F938B6700A600B5 /* Debug */,
+				04B951322F938B6700A600B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -895,6 +1047,19 @@
 			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		04B951342F938F2F00A600B5 /* HelaTrack.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				04B951352F938F2F00A600B5 /* HelaTrack.xcdatamodel */,
+			);
+			currentVersion = 04B951352F938F2F00A600B5 /* HelaTrack.xcdatamodel */;
+			path = HelaTrack.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0415549B2F8CE36700AD8599 /* Project object */;
 }

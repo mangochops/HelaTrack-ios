@@ -10,10 +10,44 @@ import SwiftUI
 struct InsightsView: View {
     @State private var showCashDialog = false
     
-    // Mock Data for UI alignment
-    let mockCustomers = [
-        CustomerPaymentSummary(name: "Villa Rosa on", amount: 1300)
-    ]
+    // Fetch transactions for the current month
+        @FetchRequest(
+            entity: Transaction.entity(),
+            sortDescriptors: [NSSortDescriptor(keyPath: \Transaction.timestamp, ascending: false)],
+            animation: .default
+        )
+        private var allTransactions: FetchedResults<Transaction>
+
+        // --- Computed Properties for Live Data ---
+
+        var currentMonthTransactions: [Transaction] {
+            let calendar = Calendar.current
+            return allTransactions.filter { tx in
+                guard let date = tx.timestamp else { return false }
+                return calendar.isDate(date, equalTo: Date(), toGranularity: .month)
+            }
+        }
+
+        var totalDigitalAmount: Double {
+            currentMonthTransactions.reduce(0) { $0 + $1.amount }
+        }
+
+        // Logic for Top Customers
+        var topCustomers: [CustomerPaymentSummary] {
+            let grouped = Dictionary(grouping: currentMonthTransactions) { $0.person ?? "Unknown" }
+            return grouped.map { name, txs in
+                CustomerPaymentSummary(name: name, amount: txs.reduce(0) { $0 + $1.amount })
+            }
+            .sorted { $0.amount > $1.amount }
+            .prefix(3).map { $0 }
+        }
+    
+    // Computed property to get the current month name (e.g., "April")
+        var currentMonthName: String {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "MMMM" // Returns full month name
+            return formatter.string(from: Date())
+        }
     
     var body: some View {
         NavigationStack {
@@ -21,12 +55,12 @@ struct InsightsView: View {
                 ScrollView {
                     VStack(spacing: 16) {
                         InsightCard(
-                            monthName: "April Performance",
-                            totalAmount: 1300,
+                            monthName: "\(currentMonthName) Performance",
+                            totalAmount: totalDigitalAmount > 0 ? totalDigitalAmount : 1,
                             isIncrease: true,
                             digitalAmount: 1300,
                             cashAmount: 0,
-                            topCustomers: mockCustomers
+                            topCustomers: topCustomers
                         )
                     }
                     .padding()
@@ -46,7 +80,7 @@ struct InsightsView: View {
             }
             .navigationTitle("Insights")
             .navigationBarTitleDisplayMode(.inline)
-            .background(Color.white.ignoresSafeArea())
+            .background(Color(UIColor.systemBackground).ignoresSafeArea())
         }
         .sheet(isPresented: $showCashDialog) {
             Text("Add Cash Dialog Placeholder") // Replace with actual dialog

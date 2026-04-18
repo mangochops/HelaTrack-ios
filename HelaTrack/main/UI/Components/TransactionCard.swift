@@ -8,17 +8,43 @@
 import SwiftUI
 
 struct TransactionRow: View {
-    let transaction: TransactionModel
+    let transaction: Transaction
+    
+    // 1. Computed property to pick the logo based on category
+        var logo: Image {
+            switch transaction.category?.uppercased() {
+            case "MPESA": return .mpesaLogo
+            case "AIRTEL": return .airtelLogo
+            case "ABSA": return .absaLogo
+            case "EQUITY": return .equityLogo
+            case "FAMILY BANK": return .familyBankLogo
+            case "NCBA": return .ncbaLogo
+            default: return Image(systemName: "banknote") // Fallback for Bank
+            }
+        }
+        
+        // 2. Computed property to pick the brand color
+        var brandColor: Color {
+            switch transaction.category?.uppercased() {
+            case "MPESA": return .brandsafaricom
+            case "AIRTEL": return .brandairtel
+            case "ABSA": return .brandabsa
+            case "EQUITY": return .brandequity
+            case "FAMILY BANK": return .brandfamilyBank
+            case "NCBA": return .brandncba
+            default: return Color.primaryBrand // Your dark brand color for Banks
+            }
+        }
     
     var body: some View {
         HStack(spacing: 12) {
             // Reusable Icon component
-            ZApplyIcon(icon: transaction.logo, color: transaction.color)
+            ZApplyIcon(icon: logo, color: brandColor)
             
             VStack(alignment: .leading, spacing: 2) {
-                Text(transaction.senderName)
+                Text(transaction.person ?? "Unknown")
                     .font(.subheadline.bold())
-                Text(transaction.referenceCode)
+                Text(transaction.ref ?? "No Reference")
                     .font(.caption)
                     .foregroundColor(.secondary)
             }
@@ -29,9 +55,9 @@ struct TransactionRow: View {
                 // Quick readability: hide decimals for busy SMEs
                 Text("KES \(Int(transaction.amount))")
                     .font(.subheadline.bold())
-                    .foregroundColor(transaction.color)
+                    .foregroundColor(brandColor)
                 
-                Text(transaction.date)
+                Text(transaction.timestamp?.formatted(.dateTime.day().month().hour().minute()) ?? "")
                     .font(.caption2)
                     .foregroundColor(.secondary)
             }
