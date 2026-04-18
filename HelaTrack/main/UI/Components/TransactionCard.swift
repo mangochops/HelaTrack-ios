@@ -45,10 +45,10 @@ struct TransactionRow: View {
             ZApplyIcon(icon: logo, color: brandColor)
             
             VStack(alignment: .leading, spacing: 2) {
-                Text(transaction.person ?? "Unknown")
+                Text(transaction.person ?? "Cash")
                     .font(.subheadline.bold())
                     .foregroundColor(.primary)
-                Text(transaction.ref ?? "No Reference")
+                Text(transaction.ref ?? "cash")
                     .font(.caption)
                     .foregroundColor(.secondary)
             }

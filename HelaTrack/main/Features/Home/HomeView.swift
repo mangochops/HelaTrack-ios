@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @State private var showCashDialog = false
+    @State private var showingAddCashSheet = false
     
     @FetchRequest(
             entity: Transaction.entity(),
@@ -23,17 +23,36 @@ struct HomeView: View {
         var totalBalance: Double {
             allTransactions.reduce(0) { $0 + $1.amount }
         }
+    
+    var todayCashIncome: Double {
+        let calendar = Calendar.current
+        return allTransactions
+            .filter { tx in
+                guard let date = tx.timestamp else { return false }
+                // Check if it's today AND if it's marked as a "Cash" transaction
+                let transactionKind = tx.category ?? ""
+                return calendar.isDateInToday(date) && tx.category == "Cash"
+            }
+            .reduce(0) { $0 + $1.amount }
+    }
+
+    // Filter for Today's Digital (MPESA/Bank) Transactions
+    var todayDigitalIncome: Double {
+        let calendar = Calendar.current
+        return allTransactions
+            .filter { tx in
+                guard let date = tx.timestamp else { return false }
+                // Check if it's today AND NOT a cash transaction
+                let transactionKind = tx.category ?? ""
+                return calendar.isDateInToday(date) && tx.category != "Cash"
+            }
+            .reduce(0) { $0 + $1.amount }
+    }
 
         // 2. Calculate Today's Income (Sum of amounts where date is today)
-        var todayIncome: Double {
-            let calendar = Calendar.current
-            return allTransactions
-                .filter { transaction in
-                    guard let date = transaction.timestamp else { return false }
-                    return calendar.isDateInToday(date)
-                }
-                .reduce(0) { $0 + $1.amount }
-        }
+    var todayIncome: Double {
+        todayCashIncome + todayDigitalIncome
+    }
     
     var body: some View {
         NavigationView {
@@ -43,8 +62,9 @@ struct HomeView: View {
                     OverviewTabs(todayIncome: todayIncome, totalBalance: totalBalance)
                     
                     // Daily Pulse Section
-                    DailyPulseCard(performance: todayIncome) {
-                        showCashDialog = true
+                    DailyPulseCard(cashTotal: todayCashIncome,
+                                   digitalTotal: todayDigitalIncome) {
+                        showingAddCashSheet = true
                     }
                     
                     // Weekly Money-In Placeholder
@@ -61,9 +81,12 @@ struct HomeView: View {
                             .font(.caption)
                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                         Spacer()
-                        Button("View all") { /* Navigate to Transactions */ }
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
+                        
+                        NavigationLink(destination: TransactionsView()) {
+                            Text("View all")
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
+                        }
                     }
                     
                     // Transaction Cards
@@ -85,10 +108,10 @@ struct HomeView: View {
                 }
             }
             .background(Color.secondary.opacity(0.05).ignoresSafeArea())
+            .sheet(isPresented: $showingAddCashSheet) {
+                AddCashTransactionView()
+            }
         }
-//        .sheet(isPresented: $showCashDialog) {
-//            // Add Cash View/Dialog will go here
-//            Text("Add Cash Dialog Placeholder")
-//        }
+        
     }
 

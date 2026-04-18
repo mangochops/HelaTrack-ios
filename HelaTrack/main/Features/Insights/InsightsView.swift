@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct InsightsView: View {
-    @State private var showCashDialog = false
+    @State private var showingAddCashSheet = false
     
     // Fetch transactions for the current month
         @FetchRequest(
@@ -28,24 +28,34 @@ struct InsightsView: View {
             }
         }
 
-        var totalDigitalAmount: Double {
-            currentMonthTransactions.reduce(0) { $0 + $1.amount }
+    var monthlyDigitalTotal: Double {
+            currentMonthTransactions
+                .filter { ($0.category ?? "") != "Cash" }
+                .reduce(0) { $0 + $1.amount }
         }
 
-        // Logic for Top Customers
+        var monthlyCashTotal: Double {
+            currentMonthTransactions
+                .filter { ($0.category ?? "") == "Cash" }
+                .reduce(0) { $0 + $1.amount }
+        }
+
+        var monthlyGrandTotal: Double {
+            monthlyDigitalTotal + monthlyCashTotal
+        }
+
         var topCustomers: [CustomerPaymentSummary] {
-            let grouped = Dictionary(grouping: currentMonthTransactions) { $0.person ?? "Unknown" }
+            let grouped = Dictionary(grouping: currentMonthTransactions) { $0.person ?? "Cash Sale" }
             return grouped.map { name, txs in
                 CustomerPaymentSummary(name: name, amount: txs.reduce(0) { $0 + $1.amount })
             }
             .sorted { $0.amount > $1.amount }
             .prefix(3).map { $0 }
         }
-    
-    // Computed property to get the current month name (e.g., "April")
+        
         var currentMonthName: String {
             let formatter = DateFormatter()
-            formatter.dateFormat = "MMMM" // Returns full month name
+            formatter.dateFormat = "MMMM"
             return formatter.string(from: Date())
         }
     
@@ -56,7 +66,7 @@ struct InsightsView: View {
                     VStack(spacing: 16) {
                         InsightCard(
                             monthName: "\(currentMonthName) Performance",
-                            totalAmount: totalDigitalAmount > 0 ? totalDigitalAmount : 1,
+                            totalAmount: monthlyGrandTotal,
                             isIncrease: true,
                             digitalAmount: 1300,
                             cashAmount: 0,
@@ -67,7 +77,7 @@ struct InsightsView: View {
                 }
                 
                 // Floating Action Button
-                Button(action: { showCashDialog = true }) {
+                Button(action: { showingAddCashSheet = true }) {
                     Label("Add Cash Sale", systemImage: "plus")
                         .font(.subheadline.bold())
                         .padding()
@@ -82,8 +92,8 @@ struct InsightsView: View {
             .navigationBarTitleDisplayMode(.inline)
             .background(Color(UIColor.systemBackground).ignoresSafeArea())
         }
-        .sheet(isPresented: $showCashDialog) {
-            Text("Add Cash Dialog Placeholder") // Replace with actual dialog
+        .sheet(isPresented: $showingAddCashSheet) {
+            AddCashTransactionView()
         }
     }
 }

@@ -16,6 +16,10 @@ struct InsightCard: View {
         let topCustomers: [CustomerPaymentSummary]
         
         @State private var isExpanded = false
+    private var internalTotal: Double {
+            let sum = digitalAmount + cashAmount
+            return sum > 0 ? sum : 1 // Avoid division by zero
+        }
         
         var body: some View {
             VStack(alignment: .leading, spacing: 16) {
@@ -39,13 +43,18 @@ struct InsightCard: View {
                         .font(.caption2)
                         .foregroundColor(.secondary)
                     
+                    // 1. Calculate ratios safely to avoid crashes if total is 0
+                    let digitalRatio = CGFloat(digitalAmount / internalTotal)
+                    let digitalPercent = Int((digitalAmount / internalTotal) * 100)
+                    let cashPercent = Int((cashAmount / internalTotal) * 100)
+                    
                     GeometryReader { geo in
                         HStack(spacing: 0) {
                             // Digital Segment
                             Rectangle()
                                 .fill(Color.accentColor)
                             // Change this line inside your GeometryReader
-                            .frame(width: totalAmount > 0 ? geo.size.width * CGFloat(digitalAmount / totalAmount) : 0)
+                            .frame(width: geo.size.width * digitalRatio)
                             // Cash Segment
                             Rectangle()
                                 .fill(Color.secondary.opacity(0.2))
@@ -55,9 +64,9 @@ struct InsightCard: View {
                     .cornerRadius(4)
                     
                     HStack {
-                        Text("Digital: \(Int((digitalAmount / totalAmount) * 100))%")
+                        Text("Digital: \(digitalPercent)%")
                         Spacer()
-                        Text("Cash: \(Int((cashAmount / totalAmount) * 100))%")
+                        Text("Cash: \(cashPercent)%")
                     }
                     .font(.caption2)
                     .foregroundColor(.secondary)

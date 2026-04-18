@@ -7,10 +7,31 @@
 
 import SwiftUI
 
+enum PaymentMethod: String {
+    case mpesa = "M-PESA"
+    case airtel = "Airtel Money"
+    case equity = "Equity Bank"
+    case family = "Family Bank"
+    case ncba = "NCBA"
+    case absa = "ABSA"
+    
+    var brandColor: Color {
+        switch self {
+        case .mpesa: return .brandsafaricom
+        case .airtel: return .brandairtel
+        case .equity: return .brandequity
+        case .family: return .brandfamilyBank
+        case .ncba: return .brandncba
+        case .absa: return .brandabsa
+        }
+    }
+}
+
 struct ProfileView: View {
     // These would typically come from a ViewModel in your production code
     @State var businessName: String = "Tinga"
     @State var phoneNumber: String = "012345678"
+    @State var selectedMethod: PaymentMethod = .mpesa
     
     @Environment(\.colorScheme) var colorScheme
     
@@ -22,13 +43,14 @@ struct ProfileView: View {
                     VStack {
                         ZStack {
                             Circle()
-                                .fill(Color.brandsafaricom) // Using your brand colors
+                                .foregroundStyle(selectedMethod.brandColor) // Using your brand colors
                                 .frame(width: 80, height: 80)
                             
                             Text(businessName.prefix(1).uppercased())
                                 .font(.system(size: 32, weight: .bold))
                                 .foregroundColor(.white)
                         }
+                        .drawingGroup()
                         
                         Text(businessName)
                             .font(.title2.bold())
@@ -37,7 +59,7 @@ struct ProfileView: View {
                     }
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 40)
-                    .background(Color(UIColor.secondarySystemBackground))
+                    .background(selectedMethod.brandColor.opacity(0.1))
                     
                     // --- IDENTITY SECTION ---
                     VStack(alignment: .leading, spacing: 20) {
