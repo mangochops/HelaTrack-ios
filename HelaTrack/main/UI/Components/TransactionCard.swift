@@ -9,6 +9,9 @@ import SwiftUI
 
 struct TransactionRow: View {
     let transaction: Transaction
+    // Helper to adjust shadows based on mode
+        @Environment(\.colorScheme) var colorScheme
+        var isDarkMode: Bool { colorScheme == .dark }
     
     // 1. Computed property to pick the logo based on category
         var logo: Image {
@@ -44,6 +47,7 @@ struct TransactionRow: View {
             VStack(alignment: .leading, spacing: 2) {
                 Text(transaction.person ?? "Unknown")
                     .font(.subheadline.bold())
+                    .foregroundColor(.primary)
                 Text(transaction.ref ?? "No Reference")
                     .font(.caption)
                     .foregroundColor(.secondary)
@@ -63,9 +67,11 @@ struct TransactionRow: View {
             }
         }
         .padding()
-        .background(Color.white)
+        .background(Color(UIColor.secondarySystemBackground))
         .cornerRadius(12)
         // Adding a subtle shadow to match your Android design
-        .shadow(color: Color.black.opacity(0.03), radius: 5, x: 0, y: 2)
+        .shadow(color: Color.black.opacity(isDarkMode ? 0 : 0.03), radius: 5, x: 0, y: 2)
+        
+        
     }
 }

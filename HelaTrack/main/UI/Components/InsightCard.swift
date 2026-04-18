@@ -43,7 +43,7 @@ struct InsightCard: View {
                         HStack(spacing: 0) {
                             // Digital Segment
                             Rectangle()
-                                .fill(Color(red: 0.05, green: 0.1, blue: 0.2))
+                                .fill(Color.accentColor)
                             // Change this line inside your GeometryReader
                             .frame(width: totalAmount > 0 ? geo.size.width * CGFloat(digitalAmount / totalAmount) : 0)
                             // Cash Segment

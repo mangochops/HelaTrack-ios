@@ -12,6 +12,8 @@ struct ProfileView: View {
     @State var businessName: String = "Tinga"
     @State var phoneNumber: String = "012345678"
     
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -30,11 +32,12 @@ struct ProfileView: View {
                         
                         Text(businessName)
                             .font(.title2.bold())
+                            .foregroundColor(.primary)
                             .padding(.top, 12)
                     }
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 40)
-                    .background(Color.brandsafaricom.opacity(0.1))
+                    .background(Color(UIColor.secondarySystemBackground))
                     
                     // --- IDENTITY SECTION ---
                     VStack(alignment: .leading, spacing: 20) {
@@ -54,7 +57,7 @@ struct ProfileView: View {
                                 .font(.subheadline)
                                 .frame(maxWidth: .infinity)
                                 .padding()
-                                .background(Color(red: 0.05, green: 0.1, blue: 0.2)) // Your dark brand color
+                                .background(colorScheme == .dark ? Color.accentColor : Color(red: 0.05, green: 0.1, blue: 0.2)) // Your dark brand color
                                 .foregroundColor(.white)
                                 .cornerRadius(12)
                         }
@@ -76,7 +79,7 @@ struct ProfileView: View {
             }
             .navigationTitle("Profile")
             .navigationBarTitleDisplayMode(.inline)
-            .background(Color.white.ignoresSafeArea())
+            .background(Color(UIColor.systemBackground).ignoresSafeArea())
         }
     }
 }
@@ -99,6 +102,7 @@ struct ProfileItem: View {
                     .foregroundColor(.secondary)
                 Text(value)
                     .font(.body.weight(.medium))
+                    .foregroundColor(.primary)
             }
         }
     }

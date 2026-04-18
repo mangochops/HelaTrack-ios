@@ -51,8 +51,7 @@ struct HomeView: View {
                     VStack(alignment: .leading) {
                         
                         IncomeBarGraph(
-                            data: [200, 400, 600, 800, 1200, 1500, todayIncome],
-                            days: ["T", "F", "S", "S", "M", "T", "W"]
+                            data: [200, 400, 600, 800, 1200, 1500, todayIncome]
                         )
                     }
                     
