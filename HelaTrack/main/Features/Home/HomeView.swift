@@ -98,6 +98,11 @@ struct HomeView: View {
                 }
                 .padding()
             }
+        .refreshable {
+            // Trigger any background sync check here
+            print("Home View Dashboard updated")
+            try? await Task.sleep(nanoseconds: 1 * 1_000_000_000)
+        }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {

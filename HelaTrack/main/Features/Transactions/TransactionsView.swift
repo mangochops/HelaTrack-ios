@@ -63,7 +63,14 @@ struct TransactionsView: View {
                                 TransactionRow(transaction: transaction)
                             }
                         }
+                        
                         .padding(.horizontal)
+                    }
+                    .refreshable {
+                        // This allows the user to manually trigger a refresh
+                        // Even with @FetchRequest, it provides a "Manual Sync" feel
+                        try? await Task.sleep(nanoseconds: 1 * 1_000_000_000) // 1-second delay for feedback
+                        print("Transactions refreshed")
                     }
                 }
                 
