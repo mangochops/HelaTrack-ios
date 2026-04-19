@@ -55,6 +55,7 @@
 		04BADDEA2F91610600111C21 /* InsightCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BADDE92F91610600111C21 /* InsightCard.swift */; };
 		04BADDEC2F91638400111C21 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BADDEB2F91638400111C21 /* EditProfileView.swift */; };
 		04E509882F9541CB00036634 /* LegalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E509872F9541CB00036634 /* LegalView.swift */; };
+		04E5098A2F95436700036634 /* PDFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E509892F95436700036634 /* PDFManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +149,7 @@
 		04BADDE92F91610600111C21 /* InsightCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightCard.swift; sourceTree = "<group>"; };
 		04BADDEB2F91638400111C21 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		04E509872F9541CB00036634 /* LegalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalView.swift; sourceTree = "<group>"; };
+		04E509892F95436700036634 /* PDFManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -362,6 +364,7 @@
 				04BADDE52F91551C00111C21 /* FilterChip.swift */,
 				04BADDE92F91610600111C21 /* InsightCard.swift */,
 				04B9513A2F93FF1400A600B5 /* AddCashSheet.swift */,
+				04E509892F95436700036634 /* PDFManager.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -610,6 +613,7 @@
 				049CA1622F90FA1E00B48F29 /* OnboardingView.swift in Sources */,
 				04B951212F92A3C000A600B5 /* MessageParser.swift in Sources */,
 				049CA1792F912E7900B48F29 /* Icons.swift in Sources */,
+				04E5098A2F95436700036634 /* PDFManager.swift in Sources */,
 				049CA1732F9124C900B48F29 /* AnimationPage.swift in Sources */,
 				04B9511D2F92A24400A600B5 /* PersistenceController.swift in Sources */,
 				04B951232F92A44500A600B5 /* Notifications.swift in Sources */,

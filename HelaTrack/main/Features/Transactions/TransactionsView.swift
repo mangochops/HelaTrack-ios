@@ -7,10 +7,17 @@
 
 import SwiftUI
 
+struct PDFShareItem: Identifiable {
+    let id = UUID()
+    let data: Data
+}
 
 struct TransactionsView: View {
     @State private var searchQuery = ""
     @State private var selectedFilter: TimeFilter = .all
+    @State private var pdfData: Data?
+    @State private var isSharing = false
+    @State private var pdfToShare: PDFShareItem?
     
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Transaction.timestamp, ascending: false)],
@@ -61,7 +68,7 @@ struct TransactionsView: View {
                 }
                 
                 // --- FLOATING ACTION BUTTON ---
-                Button(action: { /* PDF Export Logic */ }) {
+                Button(action: { self.exportToPDF() }) {
                     Label("Export PDF", systemImage: "doc.plaintext.fill")
                         .font(.subheadline.bold())
                         .padding()
@@ -75,9 +82,21 @@ struct TransactionsView: View {
             .navigationTitle("Transactions")
             .navigationBarTitleDisplayMode(.inline)
             .background(Color.secondary.opacity(0.05).ignoresSafeArea())
+            .sheet(item: $pdfToShare) { item in
+                            ShareSheet(activityItems: [item.data])
+                        }
         }
         
+        
     }
+    
+    private func exportToPDF() {
+            let data = PDFManager.createTransactionReport(transactions: Array(filteredTransactions))
+            if !data.isEmpty {
+                self.pdfToShare = PDFShareItem(data: data)
+            }
+        }
+    
     private var filteredTransactions: [Transaction] {
         // 1. Apply Time Filter
         let dateFiltered = transactions.filter { tx in
@@ -97,4 +116,11 @@ struct TransactionsView: View {
             }
         }
     }
+}
+struct ShareSheet: UIViewControllerRepresentable {
+    var activityItems: [Any]
+    func makeUIViewController(context: Context) -> UIActivityViewController {
+        UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+    }
+    func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {}
 }
