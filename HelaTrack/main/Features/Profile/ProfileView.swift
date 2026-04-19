@@ -73,6 +73,25 @@ struct ProfileView: View {
                         
                         Spacer(minLength: 32)
                         
+                        // --- NEW: SUPPORT & LEGAL SECTION ---
+                            Text("Support & Legal")
+                                .font(.caption.bold())
+                                .foregroundColor(.brandsafaricom)
+                                .padding(.top, 16)
+                            
+                            NavigationLink(destination: SettingsView()) {
+                                LegalRow(icon: "gearshape.fill", label: "App Settings")
+                            }
+                            
+                            NavigationLink(destination: TermsView()) {
+                                LegalRow(icon: "doc.text.fill", label: "Terms & Conditions")
+                            }
+                            
+                            NavigationLink(destination: PrivacyPolicyView()) {
+                                LegalRow(icon: "lock.shield.fill", label: "Privacy Policy")
+                            }
+                            
+                            Spacer(minLength: 32)
                         // --- ACTIONS ---
                         NavigationLink(destination: EditProfileView(businessName: $businessName, phoneNumber: $phoneNumber)) {
                             Label("Edit Business Profile", systemImage: "pencil")

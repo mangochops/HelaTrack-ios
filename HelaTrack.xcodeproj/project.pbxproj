@@ -54,6 +54,7 @@
 		04BADDE82F9160D500111C21 /* InsightsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BADDE72F9160D500111C21 /* InsightsModel.swift */; };
 		04BADDEA2F91610600111C21 /* InsightCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BADDE92F91610600111C21 /* InsightCard.swift */; };
 		04BADDEC2F91638400111C21 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BADDEB2F91638400111C21 /* EditProfileView.swift */; };
+		04E509882F9541CB00036634 /* LegalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E509872F9541CB00036634 /* LegalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +147,7 @@
 		04BADDE72F9160D500111C21 /* InsightsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsModel.swift; sourceTree = "<group>"; };
 		04BADDE92F91610600111C21 /* InsightCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightCard.swift; sourceTree = "<group>"; };
 		04BADDEB2F91638400111C21 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		04E509872F9541CB00036634 /* LegalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -333,6 +335,7 @@
 			children = (
 				049CA1842F91405300B48F29 /* ProfileView.swift */,
 				04BADDEB2F91638400111C21 /* EditProfileView.swift */,
+				04E509872F9541CB00036634 /* LegalView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -634,6 +637,7 @@
 				04B9511B2F92A1FD00A600B5 /* TransactionEntity.swift in Sources */,
 				041554A72F8CE36700AD8599 /* HelaTrackApp.swift in Sources */,
 				04B951382F93D22C00A600B5 /* EODManager.swift in Sources */,
+				04E509882F9541CB00036634 /* LegalView.swift in Sources */,
 				049CA1642F90FA4500B48F29 /* OnboardingViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
