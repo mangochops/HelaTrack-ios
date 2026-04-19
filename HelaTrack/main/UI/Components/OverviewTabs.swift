@@ -32,7 +32,7 @@ struct OverviewTabs: View {
             // Total Balance Card
             VStack(alignment: .leading, spacing: 8) {
                 HStack {
-                    Text("Total Balance")
+                    Text("Monthly Income")
                         .font(.caption)
                     Spacer()
                     Button(action: { isBalanceHidden.toggle() }) {

@@ -22,4 +22,20 @@ enum TimeFilter: String, CaseIterable {
     case today = "Today"
     case week = "This Week"
     case month = "This Month"
+    
+    func startDate() -> Date? {
+        let calendar = Calendar.current
+        let now = Date()
+        
+        switch self {
+        case .all:
+            return nil
+        case .today:
+            return calendar.startOfDay(for: now)
+        case .week:
+            return calendar.date(from: calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: now))
+        case .month:
+            return calendar.date(from: calendar.dateComponents([.year, .month], from: now))
+        }
+    }
 }

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct TransactionsView: View {
     @State private var searchQuery = ""
     @State private var selectedFilter: TimeFilter = .all
@@ -78,13 +79,22 @@ struct TransactionsView: View {
         
     }
     private var filteredTransactions: [Transaction] {
-            if searchQuery.isEmpty {
-                return Array(transactions)
-            } else {
-                return transactions.filter {
-                    ($0.person ?? "").localizedCaseInsensitiveContains(searchQuery) ||
-                    ($0.ref ?? "").localizedCaseInsensitiveContains(searchQuery)
-                }
+        // 1. Apply Time Filter
+        let dateFiltered = transactions.filter { tx in
+            guard let txDate = tx.timestamp, let startLimit = selectedFilter.startDate() else {
+                return true // If filter is 'All', return everything
+            }
+            return txDate >= startLimit
+        }
+        
+        // 2. Apply Search Query on top of date filtering
+        if searchQuery.isEmpty {
+            return dateFiltered
+        } else {
+            return dateFiltered.filter {
+                ($0.person ?? "").localizedCaseInsensitiveContains(searchQuery) ||
+                ($0.ref ?? "").localizedCaseInsensitiveContains(searchQuery)
             }
         }
+    }
 }

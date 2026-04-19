@@ -40,7 +40,7 @@ struct DailyPulseCard: View {
                             .font(.subheadline.bold())
                             .padding(.horizontal, 16)
                             .padding(.vertical, 8)
-                            .background(Color.primaryBrand) // Using your theme color
+                            .background(Color(red: 0.05, green: 0.1, blue: 0.2)) // Using your theme color
                             .foregroundColor(.white)
                             .cornerRadius(12)
                     }
