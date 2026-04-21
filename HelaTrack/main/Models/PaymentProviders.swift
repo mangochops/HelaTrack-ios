@@ -33,7 +33,7 @@ struct PaymentMethods {
             brandColor: Color.brandsafaricom
         ),
         PaymentProvider(
-            name: "M-Pesa",
+            name: "M-Pesa Paybill",
             identifierLabel: "Paybill Number",
             logo: Image.mpesaMerchantLogo,
             brandColor: Color.brandsafaricom

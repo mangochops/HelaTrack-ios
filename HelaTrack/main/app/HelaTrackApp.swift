@@ -6,14 +6,38 @@
 //
 
 import SwiftUI
+import UserNotifications
+import BackgroundTasks
 
 @main
 struct HelaTrackApp: App {
     let persistenceController = PersistenceController.shared
+    
+    // Register the task in the init
+    init() {
+        BGTaskScheduler.shared.register(forTaskWithIdentifier: "com.helatrack.eodsummary", using: nil) { task in
+            EODManager.shared.handleEODTask(task: task as! BGAppRefreshTask)
+        }
+        
+        // 2. REQUEST NOTIFICATION PERMISSION HERE
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
+            if granted {
+                print("Permission granted!")
+            } else if let error = error {
+                print("Error requesting permission: \(error.localizedDescription)")
+            }
+        }
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .onAppear {
+                // This schedules the 8:00 PM trigger when the app starts
+                EODManager.shared.scheduleEODTask()
+            }
+                
         }
     }
 }

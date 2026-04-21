@@ -35,7 +35,7 @@ struct CredentialsPage: View {
                     .padding()
                     .background(businessName.isEmpty || identifier.isEmpty ?
                                 provider.brandColor.opacity(0.3) : provider.brandColor)
-                    .foregroundColor(.white)
+                    .foregroundColor(Color(UIColor.systemBackground))
                     .cornerRadius(12)
             }
             .disabled(businessName.isEmpty || identifier.isEmpty)

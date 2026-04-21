@@ -37,7 +37,7 @@ struct AnimationPage: View {
                     .frame(maxWidth: .infinity)
                     .padding()
                     .background(Color.primaryBrand)
-                    .foregroundColor(.white)
+                    .foregroundColor(Color(UIColor.systemBackground))
                     .cornerRadius(12)
             }
             .padding(24)
