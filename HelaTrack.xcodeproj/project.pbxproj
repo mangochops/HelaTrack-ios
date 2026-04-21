@@ -56,6 +56,7 @@
 		04BADDEC2F91638400111C21 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BADDEB2F91638400111C21 /* EditProfileView.swift */; };
 		04E509882F9541CB00036634 /* LegalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E509872F9541CB00036634 /* LegalView.swift */; };
 		04E5098A2F95436700036634 /* PDFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E509892F95436700036634 /* PDFManager.swift */; };
+		04E5098D2F95592D00036634 /* SecurityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E5098C2F95592D00036634 /* SecurityManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +151,7 @@
 		04BADDEB2F91638400111C21 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		04E509872F9541CB00036634 /* LegalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalView.swift; sourceTree = "<group>"; };
 		04E509892F95436700036634 /* PDFManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFManager.swift; sourceTree = "<group>"; };
+		04E5098C2F95592D00036634 /* SecurityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,9 +274,18 @@
 			path = HelaTrackFilter;
 			sourceTree = "<group>";
 		};
+		04E5098B2F9558FD00036634 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				04E5098C2F95592D00036634 /* SecurityManager.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
 		04F35A032F8F975900984314 /* main */ = {
 			isa = PBXGroup;
 			children = (
+				04E5098B2F9558FD00036634 /* Authentication */,
 				049CA16B2F9120A000B48F29 /* Helpers */,
 				049CA1582F90F4F900B48F29 /* res */,
 				04F35A132F8F9A0E00984314 /* Services */,
@@ -627,6 +638,7 @@
 				04B9511F2F92A30200A600B5 /* TransactionRepository.swift in Sources */,
 				04BADDE82F9160D500111C21 /* InsightsModel.swift in Sources */,
 				04BADDE22F914E9800111C21 /* TransactionModel.swift in Sources */,
+				04E5098D2F95592D00036634 /* SecurityManager.swift in Sources */,
 				04BADDE62F91551C00111C21 /* FilterChip.swift in Sources */,
 				049CA1872F9143CE00B48F29 /* OverviewTabs.swift in Sources */,
 				041554A92F8CE36700AD8599 /* ContentView.swift in Sources */,
@@ -824,6 +836,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HelaTrack/Info.plist;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "HelaTrack uses Face ID to keep your financial transactions and balance secure.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -855,6 +868,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HelaTrack/Info.plist;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "HelaTrack uses Face ID to keep your financial transactions and balance secure.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

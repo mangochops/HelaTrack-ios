@@ -32,6 +32,7 @@ struct LegalRow: View {
 struct SettingsView: View {
     @AppStorage("isDarkMode") private var isDarkMode = false
     @AppStorage("enableNotifications") private var enableNotifications = true
+    @AppStorage("isBiometricsEnabled") private var isBiometricsEnabled = false
 
     var body: some View {
         List {
@@ -39,6 +40,13 @@ struct SettingsView: View {
                 Toggle("Dark Mode", isOn: $isDarkMode)
                 Toggle("EOD Notifications", isOn: $enableNotifications)
             }
+            
+            Section(header: Text("Security")) {
+                Toggle(isOn: $isBiometricsEnabled) {
+                    Label("Lock with Biometrics", systemImage: "faceid")
+                }
+            }
+
             Section("App Info") {
                 HStack {
                     Text("Version")
@@ -46,7 +54,7 @@ struct SettingsView: View {
                     Text("1.0.0").foregroundColor(.secondary)
                 }
             }
-        }
+                    }
         .navigationTitle("Settings")
     }
 }

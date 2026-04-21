@@ -21,7 +21,7 @@ class PDFManager {
         let totalAmount = transactions.reduce(0) { $0 + $1.amount }
         // Assuming your Transaction model has an 'isCash' or 'type' property
         let cashSubtotal = transactions.filter { $0.category == "Cash" }.reduce(0) { $0 + $1.amount }
-        let digitalSubtotal = transactions.filter { $0.category == "Digital" }.reduce(0) { $0 + $1.amount }
+        let digitalSubtotal = transactions.filter { $0.category != "Cash"}.reduce(0) { $0 + $1.amount }
         
         // Get Month Name from first transaction
         let reportMonth = transactions.first?.timestamp?.formatted(.dateTime.month(.wide)) ?? "Monthly"
