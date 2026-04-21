@@ -13,7 +13,7 @@ class SupabaseManager {
     
     // Replace with the values provided by 'supabase start' in your terminal
     let client = SupabaseClient(
-        supabaseURL: URL(string: "http://127.0.0.1:54321")!,
+        supabaseURL: URL(string: "http://172.20.10.3:54321")!,
         supabaseKey: "sb_publishable_ACJWlzQH1ZjBrEguHvfOxg_3BJgxAaH"
     )
     
@@ -33,11 +33,28 @@ class SupabaseManager {
             .insert(registration)
             .execute()
     }
+    
+    // Add this to SupabaseManager.swift
+    func fetchBusinessProfile() async throws -> BusinessRegistration? {
+        let registrations: [BusinessRegistration] = try await client
+            .from("businesses")
+            .select()
+            .limit(1)
+            .execute()
+            .value
+        
+        return registrations.first
+    }
 }
 
 // Model matching your Supabase 'businesses' table columns
-struct BusinessRegistration: Encodable {
+struct BusinessRegistration: Codable {
     let business_name: String
     let provider_type: String
     let identifier_hash: String
+    
+    enum CodingKeys: String, CodingKey {
+            case business_name, provider_type, identifier_hash
+        }
 }
+
