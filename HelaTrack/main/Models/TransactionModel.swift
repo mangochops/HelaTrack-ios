@@ -19,6 +19,7 @@ struct TransactionModel: Identifiable {
 
 enum TimeFilter: String, CaseIterable {
     case all = "All"
+    case daily = "Daily"
     case today = "Today"
     case week = "This Week"
     case month = "This Month"
@@ -30,6 +31,8 @@ enum TimeFilter: String, CaseIterable {
         switch self {
         case .all:
             return nil
+        case .daily:
+            return calendar.startOfDay(for: Date())
         case .today:
             return calendar.startOfDay(for: now)
         case .week:

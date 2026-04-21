@@ -58,11 +58,24 @@ struct TransactionsView: View {
                     
                     // --- TRANSACTION LIST ---
                     ScrollView {
-                        LazyVStack(spacing: 8) {
-                            ForEach(filteredTransactions,id: \.self) { transaction in
-                                TransactionRow(transaction: transaction)
+                        LazyVStack(spacing: 8, pinnedViews: [.sectionHeaders]) {
+                                // 1. Group transactions by the start of the day
+                                let groupedByDay = Dictionary(grouping: filteredTransactions) { (tx: Transaction) -> Date in
+                                    Calendar.current.startOfDay(for: tx.timestamp ?? Date())
+                                }
+                                
+                                // 2. Sort the days (most recent first)
+                                let sortedDays = groupedByDay.keys.sorted(by: >)
+
+                                ForEach(sortedDays, id: \.self) { date in
+                                    // 3. Create a section for each day
+                                    Section(header: DailyTotalHeader(date: date, transactions: groupedByDay[date] ?? [])) {
+                                        ForEach(groupedByDay[date] ?? [], id: \.self) { transaction in
+                                            TransactionRow(transaction: transaction)
+                                        }
+                                    }
+                                }
                             }
-                        }
                         
                         .padding(.horizontal)
                     }
@@ -130,4 +143,32 @@ struct ShareSheet: UIViewControllerRepresentable {
         UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
     }
     func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {}
+}
+
+struct DailyTotalHeader: View {
+    let date: Date
+    let transactions: [Transaction]
+    
+    var dailyTotal: Double {
+        transactions.reduce(0) { $0 + $1.amount }
+    }
+    
+    var body: some View {
+        HStack {
+            Text(date.formatted(date: .abbreviated, time: .omitted))
+                .font(.subheadline.bold())
+                .foregroundColor(.secondary)
+            Spacer()
+            Text("Daily Total: KES \(Int(dailyTotal))")
+                .font(.caption.bold())
+                .padding(.horizontal, 10)
+                .padding(.vertical, 4)
+                .background(Color.accentColor.opacity(0.1))
+                .foregroundColor(.accentColor)
+                .clipShape(Capsule())
+        }
+        .padding(.vertical, 8)
+        .padding(.horizontal)
+        .background(Color(UIColor.systemBackground).opacity(0.95)) // Background for pinned header
+    }
 }
