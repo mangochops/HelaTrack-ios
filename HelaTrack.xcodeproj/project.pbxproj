@@ -14,10 +14,14 @@
 		041554B82F8CE36A00AD8599 /* messageParseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041554B72F8CE36A00AD8599 /* messageParseTest.swift */; };
 		041554C22F8CE36A00AD8599 /* HelaTrackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041554C12F8CE36A00AD8599 /* HelaTrackUITests.swift */; };
 		041554C42F8CE36A00AD8599 /* HelaTrackUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041554C32F8CE36A00AD8599 /* HelaTrackUITestsLaunchTests.swift */; };
-		049CA15D2F90F54000B48F29 /* assistant.json in Resources */ = {isa = PBXBuildFile; fileRef = 049CA1592F90F54000B48F29 /* assistant.json */; };
-		049CA15E2F90F54000B48F29 /* analytics.json in Resources */ = {isa = PBXBuildFile; fileRef = 049CA15A2F90F54000B48F29 /* analytics.json */; };
-		049CA15F2F90F54000B48F29 /* finance.json in Resources */ = {isa = PBXBuildFile; fileRef = 049CA15B2F90F54000B48F29 /* finance.json */; };
-		049CA1602F90F54000B48F29 /* moneytransfer.json in Resources */ = {isa = PBXBuildFile; fileRef = 049CA15C2F90F54000B48F29 /* moneytransfer.json */; };
+		047F14692F97A1C800411856 /* SupabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047F14682F97A1C800411856 /* SupabaseManager.swift */; };
+		047F146C2F97A2A200411856 /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = 047F146B2F97A2A200411856 /* Auth */; };
+		047F146E2F97A2A200411856 /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = 047F146D2F97A2A200411856 /* PostgREST */; };
+		047F14712F97A3FA00411856 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 047F14702F97A3FA00411856 /* Supabase */; };
+		047F14732F97A5A000411856 /* moneytransfer.json in Resources */ = {isa = PBXBuildFile; fileRef = 047F14722F97A5A000411856 /* moneytransfer.json */; };
+		047F14772F97A61300411856 /* assistant.json in Resources */ = {isa = PBXBuildFile; fileRef = 047F14742F97A61300411856 /* assistant.json */; };
+		047F14782F97A61300411856 /* finance.json in Resources */ = {isa = PBXBuildFile; fileRef = 047F14752F97A61300411856 /* finance.json */; };
+		047F14792F97A61300411856 /* analytics.json in Resources */ = {isa = PBXBuildFile; fileRef = 047F14762F97A61300411856 /* analytics.json */; };
 		049CA1622F90FA1E00B48F29 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CA1612F90FA1E00B48F29 /* OnboardingView.swift */; };
 		049CA1642F90FA4500B48F29 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CA1632F90FA4500B48F29 /* OnboardingViewModel.swift */; };
 		049CA1682F910E5700B48F29 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 049CA1672F910E5700B48F29 /* Lottie */; };
@@ -108,10 +112,11 @@
 		041554BD2F8CE36A00AD8599 /* HelaTrackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelaTrackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		041554C12F8CE36A00AD8599 /* HelaTrackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelaTrackUITests.swift; sourceTree = "<group>"; };
 		041554C32F8CE36A00AD8599 /* HelaTrackUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelaTrackUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		049CA1592F90F54000B48F29 /* assistant.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = assistant.json; path = ../../../../../GoWallet/app/src/main/res/raw/assistant.json; sourceTree = "<group>"; };
-		049CA15A2F90F54000B48F29 /* analytics.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = analytics.json; path = ../../../../../GoWallet/app/src/main/res/raw/analytics.json; sourceTree = "<group>"; };
-		049CA15B2F90F54000B48F29 /* finance.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = finance.json; path = ../../../../../GoWallet/app/src/main/res/raw/finance.json; sourceTree = "<group>"; };
-		049CA15C2F90F54000B48F29 /* moneytransfer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = moneytransfer.json; path = ../../../../../GoWallet/app/src/main/res/raw/moneytransfer.json; sourceTree = "<group>"; };
+		047F14682F97A1C800411856 /* SupabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseManager.swift; sourceTree = "<group>"; };
+		047F14722F97A5A000411856 /* moneytransfer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = moneytransfer.json; path = ../../../../../KotlinApps/GoWallet/app/src/main/res/raw/moneytransfer.json; sourceTree = "<group>"; };
+		047F14742F97A61300411856 /* assistant.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = assistant.json; path = ../../../../../KotlinApps/GoWallet/app/src/main/res/raw/assistant.json; sourceTree = "<group>"; };
+		047F14752F97A61300411856 /* finance.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = finance.json; path = ../../../../../KotlinApps/GoWallet/app/src/main/res/raw/finance.json; sourceTree = "<group>"; };
+		047F14762F97A61300411856 /* analytics.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = analytics.json; path = ../../../../../KotlinApps/GoWallet/app/src/main/res/raw/analytics.json; sourceTree = "<group>"; };
 		049CA1612F90FA1E00B48F29 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		049CA1632F90FA4500B48F29 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		049CA1692F9116D600B48F29 /* PaymentProviders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentProviders.swift; sourceTree = "<group>"; };
@@ -159,6 +164,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				047F14712F97A3FA00411856 /* Supabase in Frameworks */,
+				047F146E2F97A2A200411856 /* PostgREST in Frameworks */,
+				047F146C2F97A2A200411856 /* Auth in Frameworks */,
 				049CA1682F910E5700B48F29 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,6 +203,7 @@
 				041554C02F8CE36A00AD8599 /* HelaTrackUITests */,
 				04B951292F938B6600A600B5 /* HelaTrackFilter */,
 				041554A42F8CE36700AD8599 /* Products */,
+				047F146F2F97A3FA00411856 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -245,13 +254,20 @@
 			path = HelaTrackUITests;
 			sourceTree = "<group>";
 		};
+		047F146F2F97A3FA00411856 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		049CA1582F90F4F900B48F29 /* res */ = {
 			isa = PBXGroup;
 			children = (
-				049CA15A2F90F54000B48F29 /* analytics.json */,
-				049CA1592F90F54000B48F29 /* assistant.json */,
-				049CA15B2F90F54000B48F29 /* finance.json */,
-				049CA15C2F90F54000B48F29 /* moneytransfer.json */,
+				047F14762F97A61300411856 /* analytics.json */,
+				047F14742F97A61300411856 /* assistant.json */,
+				047F14752F97A61300411856 /* finance.json */,
+				047F14722F97A5A000411856 /* moneytransfer.json */,
 			);
 			path = res;
 			sourceTree = "<group>";
@@ -278,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				04E5098C2F95592D00036634 /* SecurityManager.swift */,
+				047F14682F97A1C800411856 /* SupabaseManager.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -467,6 +484,9 @@
 			name = HelaTrack;
 			packageProductDependencies = (
 				049CA1672F910E5700B48F29 /* Lottie */,
+				047F146B2F97A2A200411856 /* Auth */,
+				047F146D2F97A2A200411856 /* PostgREST */,
+				047F14702F97A3FA00411856 /* Supabase */,
 			);
 			productName = HelaTrack;
 			productReference = 041554A32F8CE36700AD8599 /* HelaTrack.app */;
@@ -562,6 +582,7 @@
 			mainGroup = 0415549A2F8CE36700AD8599;
 			packageReferences = (
 				049CA1662F910E5700B48F29 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				047F146A2F97A2A200411856 /* XCRemoteSwiftPackageReference "supabase-swift" */,
 			);
 			productRefGroup = 041554A42F8CE36700AD8599 /* Products */;
 			projectDirPath = "";
@@ -580,11 +601,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				049CA15F2F90F54000B48F29 /* finance.json in Resources */,
+				047F14782F97A61300411856 /* finance.json in Resources */,
+				047F14792F97A61300411856 /* analytics.json in Resources */,
 				041554AE2F8CE36A00AD8599 /* Preview Assets.xcassets in Resources */,
-				049CA15D2F90F54000B48F29 /* assistant.json in Resources */,
-				049CA1602F90F54000B48F29 /* moneytransfer.json in Resources */,
-				049CA15E2F90F54000B48F29 /* analytics.json in Resources */,
+				047F14732F97A5A000411856 /* moneytransfer.json in Resources */,
+				047F14772F97A61300411856 /* assistant.json in Resources */,
 				041554AB2F8CE36A00AD8599 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -647,6 +668,7 @@
 				049CA17B2F913F7000B48F29 /* MainTabView.swift in Sources */,
 				049CA1712F91242E00B48F29 /* ZApplyIcon.swift in Sources */,
 				04BADDE02F914C0300111C21 /* IncomeBarGraph.swift in Sources */,
+				047F14692F97A1C800411856 /* SupabaseManager.swift in Sources */,
 				049CA1752F91252F00B48F29 /* PaymentSelectionPage.swift in Sources */,
 				04BADDEA2F91610600111C21 /* InsightCard.swift in Sources */,
 				049CA16F2F9123E600B48F29 /* LottieView.swift in Sources */,
@@ -1064,6 +1086,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		047F146A2F97A2A200411856 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.1;
+			};
+		};
 		049CA1662F910E5700B48F29 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
@@ -1075,6 +1105,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		047F146B2F97A2A200411856 /* Auth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 047F146A2F97A2A200411856 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Auth;
+		};
+		047F146D2F97A2A200411856 /* PostgREST */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 047F146A2F97A2A200411856 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = PostgREST;
+		};
+		047F14702F97A3FA00411856 /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 047F146A2F97A2A200411856 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
 		049CA1672F910E5700B48F29 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 049CA1662F910E5700B48F29 /* XCRemoteSwiftPackageReference "lottie-ios" */;

@@ -13,6 +13,9 @@ struct CredentialsPage: View {
     @Binding var identifier: String
     let onFinish: () -> Void
     
+    @State private var isSubmitting = false
+    @State private var errorMessage: String?
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             Text("Link \(provider.name)")
@@ -28,20 +31,51 @@ struct CredentialsPage: View {
             
             Spacer()
             
-            Button(action: onFinish) {
-                Text("Start Tracking Payments")
-                    .font(.headline)
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(businessName.isEmpty || identifier.isEmpty ?
-                                provider.brandColor.opacity(0.3) : provider.brandColor)
-                    .foregroundColor(Color(UIColor.systemBackground))
-                    .cornerRadius(12)
-            }
-            .disabled(businessName.isEmpty || identifier.isEmpty)
+            Button(action: performRegistration) {
+                            HStack {
+                                if isSubmitting {
+                                    ProgressView()
+                                        .tint(Color(UIColor.systemBackground))
+                                        .padding(.trailing, 8)
+                                }
+                                Text(isSubmitting ? "Linking..." : "Start Tracking Payments")
+                            }
+                            .font(.headline)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(businessName.isEmpty || identifier.isEmpty || isSubmitting ?
+                                        provider.brandColor.opacity(0.3) : provider.brandColor)
+                            .foregroundColor(Color(UIColor.systemBackground))
+                            .cornerRadius(12)
+                        }
+            .disabled(businessName.isEmpty || identifier.isEmpty || isSubmitting)
         }
         .padding(24)
     }
+    private func performRegistration() {
+            isSubmitting = true
+            errorMessage = nil
+            
+            Task {
+                do {
+                    try await SupabaseManager.shared.registerBusiness(
+                        name: businessName,
+                        provider: provider.name,
+                        identifier: identifier
+                    )
+                    await MainActor.run {
+                        isSubmitting = false
+                        onFinish()
+                    }
+                } catch {
+                    await MainActor.run {
+                        isSubmitting = false
+                        errorMessage = "Connection failed. Check if Supabase is running."
+                        print("Registration Error: \(error)")
+                    }
+                }
+            }
+        }
 }
 
 
