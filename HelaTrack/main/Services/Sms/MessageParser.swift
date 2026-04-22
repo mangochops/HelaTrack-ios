@@ -10,7 +10,7 @@ import Foundation
 struct MessageParser {
     // Regex Patterns (Mirrored from Kotlin version)
     private static let mpesaReceivedPattern = "([A-Z0-9]{10})\\sConfirmed\\.\\s(?:Ksh|KES)\\s?([\\d,]+\\.\\d{2})\\sreceived\\sfrom\\s(.+?)(?=\\son|\\.|$)"
-    private static let mpesaMerchantPattern = "([A-Z0-9]{10})\\sConfirmed\\.\\s(?:Ksh|KES)\\s?([\\d,]+\\.\\d{2})\\spaid\\sto\\s(.+?)(?:\\son|\\.|$)"
+    private static let mpesaMerchantPattern = "([A-Z0-9]{10})\\sConfirmed\\.\\s(?:Ksh|KES)\\s?([\\d,]+\\.\\d{2})\\s(?:paid\\sto|received\\sfrom)\\s(.+?)(?=\\s(?:on|at|Acc|\\d{12})|\\.|$)"
     private static let airtelPattern = "ID:\\s?(\\w+).*?Amount:\\s(?:Ksh|KES)\\s?([\\d,]+\\.\\d{2})\\sfrom\\s(.+?)(?:\\son|$)"
     private static let bankPattern = "(?:Ksh|KES)\\s?([\\d,]+\\.\\d{2})\\sby\\s(.+?)(?:\\son|\\.|$)"
 
