@@ -56,13 +56,17 @@ struct CredentialsPage: View {
             isSubmitting = true
             errorMessage = nil
             
-            Task {
+        Task {
                 do {
+                    // Ensure we have a session before saving
+                    try await SupabaseManager.shared.signIn()
+                    
                     try await SupabaseManager.shared.registerBusiness(
                         name: businessName,
                         provider: provider.name,
                         identifier: identifier
                     )
+                    
                     await MainActor.run {
                         isSubmitting = false
                         onFinish()
@@ -70,7 +74,7 @@ struct CredentialsPage: View {
                 } catch {
                     await MainActor.run {
                         isSubmitting = false
-                        errorMessage = "Connection failed. Check if Supabase is running."
+                        errorMessage = "Authentication failed."
                         print("Registration Error: \(error)")
                     }
                 }

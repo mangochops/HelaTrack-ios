@@ -112,7 +112,7 @@ struct ProfileView: View {
                                     .cornerRadius(12)
                             }
                             
-                            Button(action: { /* Logout Logic */ }) {
+                            Button(action: { logout() }) {
                                 Label("Logout & Reset", systemImage: "rectangle.portrait.and.arrow.right")
                                     .font(.subheadline)
                                     .frame(maxWidth: .infinity)
@@ -137,10 +137,12 @@ struct ProfileView: View {
         }
     }
     private func loadProfileData() async {
-        print("🚀 Starting fetch...")
+        print("🚀 Fetching profile for the authenticated user...")
         do {
+            // No need to pass a phone number anymore!
+            // Supabase Auth handles the identity.
             if let profile = try await SupabaseManager.shared.fetchBusinessProfile() {
-                print("✅ Data received: \(profile.business_name)") // Check if this prints
+                print("✅ Correct Profile received: \(profile.business_name)")
                 await MainActor.run {
                     self.businessName = profile.business_name
                     self.identifierHash = profile.identifier_hash
@@ -151,12 +153,23 @@ struct ProfileView: View {
                     self.isLoading = false
                 }
             } else {
-                print("❓ No profile found in database")
+                print("❓ No profile found. User might need to complete registration.")
                 await MainActor.run { self.isLoading = false }
             }
         } catch {
-            print("❌ Supabase Error: \(error)") // This will tell you if it's a network or decoding error
+            print("❌ Supabase Error: \(error)")
             await MainActor.run { self.isLoading = false }
+        }
+    }
+    
+    private func logout() {
+        Task {
+            try? await SupabaseManager.shared.client.auth.signOut()
+            // Reset local UI or navigate back to Onboarding
+            await MainActor.run {
+                self.businessName = "Guest"
+                self.isLoading = true
+            }
         }
     }
     
