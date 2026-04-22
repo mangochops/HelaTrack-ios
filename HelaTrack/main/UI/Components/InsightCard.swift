@@ -23,9 +23,26 @@ struct InsightCard: View {
         animation: .default)
     private var transactions: FetchedResults<Transaction>
     
+    // 1. Calculate digital total (Transactions that are NOT cash)
+    private var calculatedDigitalAmount: Double {
+        let allTransactions = Array(transactions)
+        return allTransactions
+            .filter { $0.category != "Cash" }
+            .reduce(0) { $0 + $1.amount }
+    }
+
+    // 2. Calculate cash total (Transactions explicitly marked as cash)
+    private var calculatedCashAmount: Double {
+        let allTransactions = Array(transactions)
+        return allTransactions
+            .filter { $0.category == "Cash" }
+            .reduce(0) { $0 + $1.amount }
+    }
+
+    // 3. Updated internal total using the new calculated values
     private var internalTotal: Double {
-        let sum = digitalAmount + cashAmount
-        return sum > 0 ? sum : 1 // Avoid division by zero
+        let sum = calculatedDigitalAmount + calculatedCashAmount
+        return sum > 0 ? sum : 1
     }
     
     var body: some View {
@@ -51,9 +68,9 @@ struct InsightCard: View {
                     .foregroundColor(.secondary)
                 
                 // 1. Calculate ratios safely to avoid crashes if total is 0
-                let digitalRatio = CGFloat(digitalAmount / internalTotal)
-                let digitalPercent = Int((digitalAmount / internalTotal) * 100)
-                let cashPercent = Int((cashAmount / internalTotal) * 100)
+                let digitalRatio = CGFloat(calculatedDigitalAmount / internalTotal)
+                let digitalPercent = Int((calculatedDigitalAmount / internalTotal) * 100)
+                let cashPercent = Int((calculatedCashAmount / internalTotal) * 100)
                 
                 GeometryReader { geo in
                     HStack(spacing: 0) {
