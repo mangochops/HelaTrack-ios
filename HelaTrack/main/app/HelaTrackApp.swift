@@ -11,6 +11,8 @@ import BackgroundTasks
 
 @main
 struct HelaTrackApp: App {
+    @AppStorage("isDarkMode") private var isDarkMode = false
+    
     let persistenceController = PersistenceController.shared
     
     // Register the task in the init
@@ -33,9 +35,11 @@ struct HelaTrackApp: App {
         WindowGroup {
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .preferredColorScheme(isDarkMode ? .dark : .light)
                 .onAppear {
                 // This schedules the 8:00 PM trigger when the app starts
                 EODManager.shared.scheduleEODTask()
+                
             }
                 
         }
