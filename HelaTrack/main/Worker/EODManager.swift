@@ -15,10 +15,13 @@ class EODManager {
     let taskIdentifier = "com.helatrack.eodsummary"
 
     func scheduleEODTask() {
-        let request = BGAppRefreshTaskRequest(identifier: taskIdentifier)
+        // Change to BGProcessingTaskRequest for better reliability on real hardware
+        let request = BGProcessingTaskRequest(identifier: taskIdentifier)
+        request.requiresNetworkConnectivity = false
+        request.requiresExternalPower = false // Set to true if you only want it to run while charging
         
         var components = Calendar.current.dateComponents([.year, .month, .day], from: Date())
-        components.hour = 20 // Sets the trigger for 8:00 PM
+        components.hour = 20
         components.minute = 0
         
         let scheduledDate = Calendar.current.date(from: components) ?? Date()
@@ -26,38 +29,25 @@ class EODManager {
         
         do {
             try BGTaskScheduler.shared.submit(request)
+            print("✅ EOD Task Scheduled successfully!")
         } catch {
-            print("Could not schedule EOD task: \(error)")
+            print("❌ Could not schedule EOD task: \(error)")
         }
     }
 
     func handleEODTask(task: BGAppRefreshTask) {
+        // 1. Immediately schedule the next one
         scheduleEODTask()
 
-        task.expirationHandler = { }
+        // 2. Add a direct print to confirm the task started
+        print("DEBUG: handleEODTask execution started")
 
-        // --- REAL CALCULATION LOGIC ---
-        let context = PersistenceController.shared.container.newBackgroundContext()
-        let fetchRequest: NSFetchRequest<Transaction> = Transaction.fetchRequest()
-        
-        let startOfToday = Calendar.current.startOfDay(for: Date())
-        // Predicate to get transactions from 12:00 AM today onwards
-        fetchRequest.predicate = NSPredicate(format: "timestamp >= %@", startOfToday as NSDate)
-
-        do {
-            let results = try context.fetch(fetchRequest)
-            let totalIncome = results.reduce(0.0) { $0 + $1.amount }
-            let count = results.count
-
-            if count > 0 {
-                sendNotification(
-                    title: "Daily Recap",
-                    message: "You collected KES \(Int(totalIncome)) from \(count) transactions today!"
-                )
-            }
-        } catch {
-            print("Failed to fetch EOD data: \(error)")
+        task.expirationHandler = {
+            print("DEBUG: Task expired by system")
         }
+
+        // 3. Bypass the fetch logic temporarily to see if the notification works
+        self.sendNotification(title: "Test", message: "If you see this, the BG Task is working!")
 
         task.setTaskCompleted(success: true)
     }
@@ -67,7 +57,19 @@ class EODManager {
         content.title = title
         content.body = message
         content.sound = .default
+        
+        // FIX 2: Explicitly set a non-nil trigger or keep nil for immediate delivery
         let request = UNNotificationRequest(identifier: "EOD_NOTIFICATION", content: content, trigger: nil)
-        UNUserNotificationCenter.current().add(request)
+        
+        // FIX 3: Ensure notification registration happens on the main thread
+        DispatchQueue.main.async {
+            UNUserNotificationCenter.current().add(request) { error in
+                if let error = error {
+                    print("❌ Notification Error: \(error.localizedDescription)")
+                } else {
+                    print("🚀 Notification successfully pushed to system!")
+                }
+            }
+        }
     }
 }

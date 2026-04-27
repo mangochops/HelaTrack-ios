@@ -8,28 +8,61 @@
 import Foundation
 import Supabase
 
+enum APIConfig {
+    static var supabaseURL: String {
+        return Bundle.main.object(forInfoDictionaryKey: "SUPABASE_URL") as? String ?? ""
+    }
+    
+    static var supabaseKey: String {
+        return Bundle.main.object(forInfoDictionaryKey: "SUPABASE_KEY") as? String ?? ""
+    }
+}
+
 class SupabaseManager {
     static let shared = SupabaseManager()
     
-    // Replace with the values provided by 'supabase start' in your terminal
-    let client = SupabaseClient(
-        supabaseURL: URL(string: "http://172.20.10.3:54321")!,
-        supabaseKey: "sb_publishable_ACJWlzQH1ZjBrEguHvfOxg_3BJgxAaH"
-    )
+    let client: SupabaseClient
     
-    private init() {}
+    private init() {
+        // Guard against empty strings to prevent the URL(string:) nil crash
+        guard let url = URL(string: APIConfig.supabaseURL), !APIConfig.supabaseURL.isEmpty else {
+            fatalError("SUPABASE_URL is missing or invalid. Check your XCConfig and Info.plist mapping.")
+        }
+        
+        // Add this options block to bypass the URL parsing crash
+        let options = SupabaseClientOptions(
+            auth: .init(
+                storageKey: "local-dev-key" // This stops the library from trying to split the URL
+            ),
+            global: .init(
+                // Adding a dummy project ID in headers stops the library from
+                // trying to extract one from the URL host string.
+                headers: ["x-supabase-project-id": "local-dev"]
+            )
+        )
+        
+        self.client = SupabaseClient(
+            supabaseURL: url,
+            supabaseKey: APIConfig.supabaseKey,
+            options: options // Pass the options here
+        )
+    }
     
     // 1. Sign in anonymously to get a stable User ID
     func signIn() async throws {
-        try await client.auth.signInAnonymously()
+        _ = try await client.auth.signInAnonymously()
     }
+    
+    /// Clears the session for testing or logout
+        func signOut() async throws {
+            try await client.auth.signOut()
+        }
     
     /// Registers a business to track app impact without storing transactions
     func registerBusiness(name: String, provider: String, identifier: String) async throws {
-        // Get the current user's UID
-        guard let userId = try? await client.auth.session.user.id else {
-            throw NSError(domain: "AuthError", code: 401, userInfo: [NSLocalizedDescriptionKey: "Not authenticated"])
-        }
+        
+        let session = try await client.auth.session
+        let userId = session.user.id
         
         let registration = BusinessRegistration(
             business_name: name,

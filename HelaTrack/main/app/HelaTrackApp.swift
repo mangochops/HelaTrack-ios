@@ -12,6 +12,7 @@ import BackgroundTasks
 @main
 struct HelaTrackApp: App {
     @AppStorage("isDarkMode") private var isDarkMode = false
+    @Environment(\.scenePhase) private var scenePhase
     
     let persistenceController = PersistenceController.shared
     
@@ -36,11 +37,12 @@ struct HelaTrackApp: App {
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .preferredColorScheme(isDarkMode ? .dark : .light)
-                .onAppear {
-                // This schedules the 8:00 PM trigger when the app starts
-                EODManager.shared.scheduleEODTask()
-                
-            }
+                .onChange(of: scenePhase) { oldPhase, newPhase in
+                    if newPhase == .background {
+                        print("DEBUG: App moved to background. Scheduling EOD task...")
+                        EODManager.shared.scheduleEODTask()
+                    }
+                }
                 
         }
     }

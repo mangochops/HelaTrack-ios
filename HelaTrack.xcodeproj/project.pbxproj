@@ -112,6 +112,8 @@
 		041554BD2F8CE36A00AD8599 /* HelaTrackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelaTrackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		041554C12F8CE36A00AD8599 /* HelaTrackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelaTrackUITests.swift; sourceTree = "<group>"; };
 		041554C32F8CE36A00AD8599 /* HelaTrackUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelaTrackUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		04782F642F9F9EF900D9E48D /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
+		04782F652F9FA22600D9E48D /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		047F14682F97A1C800411856 /* SupabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseManager.swift; sourceTree = "<group>"; };
 		047F14722F97A5A000411856 /* moneytransfer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = moneytransfer.json; path = ../../../../../KotlinApps/GoWallet/app/src/main/res/raw/moneytransfer.json; sourceTree = "<group>"; };
 		047F14742F97A61300411856 /* assistant.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = assistant.json; path = ../../../../../KotlinApps/GoWallet/app/src/main/res/raw/assistant.json; sourceTree = "<group>"; };
@@ -225,6 +227,8 @@
 				04F35A032F8F975900984314 /* main */,
 				041554AA2F8CE36A00AD8599 /* Assets.xcassets */,
 				041554AC2F8CE36A00AD8599 /* Preview Content */,
+				04782F642F9F9EF900D9E48D /* Secrets.xcconfig */,
+				04782F652F9FA22600D9E48D /* Production.xcconfig */,
 			);
 			path = HelaTrack;
 			sourceTree = "<group>";
@@ -879,6 +883,7 @@
 		};
 		041554C92F8CE36A00AD8599 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04782F652F9FA22600D9E48D /* Production.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -985,6 +990,165 @@
 			};
 			name = Release;
 		};
+		04782F662F9FA29600D9E48D /* Local */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Local;
+		};
+		04782F672F9FA29600D9E48D /* Local */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04782F642F9F9EF900D9E48D /* Secrets.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HelaTrack/Preview Content\"";
+				DEVELOPMENT_TEAM = FMB873S974;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HelaTrack/Info.plist;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "HelaTrack uses Face ID to keep your financial transactions and balance secure.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.ke.mangochopsstudio.HelaTrack;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Local;
+		};
+		04782F682F9FA29600D9E48D /* Local */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FMB873S974;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.ke.mangochopsstudio.HelaTrackTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HelaTrack.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HelaTrack";
+			};
+			name = Local;
+		};
+		04782F692F9FA29600D9E48D /* Local */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FMB873S974;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.ke.mangochopsstudio.HelaTrackUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HelaTrack;
+			};
+			name = Local;
+		};
+		04782F6A2F9FA29600D9E48D /* Local */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FMB873S974;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HelaTrackFilter/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = HelaTrackFilter;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.ke.mangochopsstudio.HelaTrack.HelaTrackFilter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Local;
+		};
 		04B951312F938B6700A600B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1042,6 +1206,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				041554C52F8CE36A00AD8599 /* Debug */,
+				04782F662F9FA29600D9E48D /* Local */,
 				041554C62F8CE36A00AD8599 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1051,6 +1216,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				041554C82F8CE36A00AD8599 /* Debug */,
+				04782F672F9FA29600D9E48D /* Local */,
 				041554C92F8CE36A00AD8599 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1060,6 +1226,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				041554CB2F8CE36A00AD8599 /* Debug */,
+				04782F682F9FA29600D9E48D /* Local */,
 				041554CC2F8CE36A00AD8599 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1069,6 +1236,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				041554CE2F8CE36A00AD8599 /* Debug */,
+				04782F692F9FA29600D9E48D /* Local */,
 				041554CF2F8CE36A00AD8599 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1078,6 +1246,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				04B951312F938B6700A600B5 /* Debug */,
+				04782F6A2F9FA29600D9E48D /* Local */,
 				04B951322F938B6700A600B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1091,7 +1260,7 @@
 			repositoryURL = "https://github.com/supabase/supabase-swift";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.5.1;
+				minimumVersion = 2.4.0;
 			};
 		};
 		049CA1662F910E5700B48F29 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {

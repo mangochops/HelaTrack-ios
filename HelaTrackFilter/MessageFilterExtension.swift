@@ -33,7 +33,11 @@ extension MessageFilterExtension: ILMessageFilterQueryHandling, ILMessageFilterC
             let isFinancialSender = sender.contains("mpesa") ||
                                     sender.contains("airtel") ||
                                     sender.contains("equity") ||
+                                    sender.contains("ncba") ||
+                                    sender.contains("absa") ||
+                                    sender.contains("family bank") ||
                                     sender.contains("247247") ||
+                                    sender.contains("303030") ||
                                     sender.contains("kcb")
 
             // 2. Identify Transactional Keywords (Matches your Kotlin logic)
